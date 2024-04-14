@@ -1,10 +1,10 @@
-const { Schema , model} = require("../connection");
+const { Schema , model} = require("../connections");
 
 const userSchema = new Schema({
-    name : {type : String, require:true},
-    email : {type : String, require:true},
-    password : {type : String, require:true},
+    name :  String,
+    email :  String,
+    password :  String,
 
 });
 
-module.exports = model('post', userSchema);
+module.exports = model('user', userSchema);

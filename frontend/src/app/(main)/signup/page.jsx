@@ -1,151 +1,165 @@
-'use client'
-import React from 'react';
-import Link from 'next/link';
-import { useFormik } from 'formik';
-import * as Yup from 'Yup';
+"use client";
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import { useRouter } from "next/navigation";
+import {
+  FaFacebookF,
+  FaLinkedinIn,
+  FaGoogle,
+  FaRegEnvelope,
+  FaRegUser,
+} from "react-icons/fa";
+import { MdLockOutline } from "react-icons/md";
 
-const Signup = () => {
-
-  const passwordRegex = new RegExp (
-    "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$"
-  );
-
-const signUpValidationSchema = Yup.object().shape({
-  name: Yup.string().min(5).required("Full name is requireds"),
-  email : Yup.string().required("Email is required").email("Email is invalid"),
-  password: Yup.string().min(8, 'too short')
-  .matches(passwordRegex, "Please enter valid password")
-  .required("Please enter your password"),
-  confirmPassword : Yup.string()
-  .oneOf([Yup.ref("password")], "Password do Not maatch")
-  .required("Please enter confirm password."),
+const SignupSchema = Yup.object().shape({
+  email: Yup.string().email("Invalid email").required("Required"),
+  password: Yup.string()
+    .min(8, "Too short")
+    .max(20, "Too long")
+    .required("Password is required")
+    .matches(/[A-Z]/, "password must contain uppercase letters")
+    .matches(/\W/, "Password must contain special characters"),
+  cpassword: Yup.string()
+    .required("Confirm Password is required")
+    .oneOf([Yup.ref("password"), null], "Passwords must match"),
 });
 
-  const signupForm = useFormik({
+const Signup = () => {
+  const router = useRouter();
+  //step1 : formik initialization
+  const SignupForm = useFormik({
     initialValues: {
       name: "",
       email: "",
       password: "",
-      confirmPassword: "",
+      cpassword: "",
     },
-    onSubmit: (values) => {
-      fetch("http://localhost:5500/post/add", {
+    onSubmit: async (values, action) => {
+      console.log(values);
+
+      const res = await fetch("http://localhost:5500/user/add", {
         method: "POST",
         body: JSON.stringify(values),
-        header: {
+        headers: {
           "Content-Type": "application/json",
         },
-      })
-        .then((response) => {
-          console.log(response.status);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-      console.log(values);
+      });
+      console.log(res.status);
+      action.resetForm();
+
+      if (res.status === 200) {
+        alert("Signup successful");
+        router.push("/seller/login");
+      } else {
+        alert("Error");
+      }
     },
-    validationSchema : signUpValidationSchema
-
+    // validationSchema: SignupSchema
   });
-
 
   return (
     <>
-      <div
-        className="flex items-center justify-center "
-        style={{
-          backgroundSize: "cover",
-          height: "100%",
-        }}
-      >
-        <div className="flex border rounded-xl ">
-          <div
-            className="bg-white w-96"
-            style={{
-              backgroundSize: "cover",
-              height: "80vh",
-              width: "100%",
-              backgroundImage: `url("https://img.freepik.com/free-vector/employer-meeting-job-applicant-pre-employment-assessment-employee-evaluation-assessment-form-report-performance-review-concept-illustration_335657-2058.jpg?t=st=1711729606~exp=1711733206~hmac=43ff0a2d0c6404d9b9de438f8e3ffda78fb3f1e0d89f58a485b784ebc518c8aa&w=1800")`,
-            }}
-          ></div>
-          <div className="  w-96  bg-white p-5 rounded-xl  " style={{}}>
-            <h3>Signup</h3>
-            <div className="mt-8">
-              <form className="space-y-6" action="">
-                <div>
-                  <label
-                    htmlFor=""
-                    className="block text-sm font-medium leading-6 text-gray-900"
+      <div className="flex fle-col items-center justify-center min-h-screen py-2 bg-gray-100">
+        <div className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
+          <div className="bg-white rounded-2xl shadow-2xl flex w-2/3 max-w-4xl">
+            {/* form */}
+            <div className="w-1/2 p-5 ">
+              <div className="text-left font bold">ReactUIHub</div>
+
+              <div className="py-10 ">
+                <h2 className="text-3xl font-bold text-cyan-950 mb-2">
+                  Sign In Account
+                </h2>
+                <div className="border-2 w-10 border-cyan-950 inline-block mb-2"></div>
+                {/* Social Icons */}
+                <div className="flex justify-center my-2">
+                  <a
+                    href="#"
+                    className="border-2 border-gray-200 rounded-full p-3 mx-1"
                   >
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Name"
-                    id="name"
-                    onChange={signupForm.handleChange}
-                    value={signupForm.values.name}
-                    className=" block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor=""
-                    className="block text-sm font-medium leading-6 text-gray-900"
+                    <FaFacebookF className="text-sm" />
+                  </a>
+                  <a
+                    href="#"
+                    className="border-2 border-gray-200 rounded-full p-3 mx-1"
                   >
-                    Email Id
-                  </label>
-                  <input
-                    type="email"
-                    placeholder="Email"
-                    id="email"
-                    onChange={signupForm.handleChange}
-                    value={signupForm.values.email}
-                    className=" block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor=""
-                    className="block text-sm font-medium leading-6 text-gray-900"
+                    <FaLinkedinIn className="text-sm" />
+                  </a>
+                  <a
+                    href="#"
+                    className="border-2 border-gray-200 rounded-full p-3 mx-1"
                   >
-                    Password
-                  </label>
-                  <input
-                    type="password"
-                    placeholder="Password"
-                    id="password"
-                    onChange={signupForm.handleChange}
-                    value={signupForm.values.password}
-                    className=" block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor=""
-                    className="block text-sm font-medium leading-6 text-gray-900"
-                  >
-                    Confirm Password
-                  </label>
-                  <input
-                    type="password"
-                    placeholder="Confirm Password"
-                    id="cpassword"
-                    onChange={signupForm.handleChange}
-                    value={signupForm.values.cpassword}
-                    className=" block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  />
+                    <FaGoogle className="text-sm" />
+                  </a>
                 </div>
 
-                <div>
-                  <div className="d-flex justify-content-end pt-3">
-                    <button type="submit" className="btn btn-primary ms-2">
-                      Submit form
-                    </button>
+                <p className="text-gray-400 my-3">or use your email account</p>
+                <div className="flex flex-col items-center  ">
+                  <div className="bg-gray-100 w-64 p-2 flex items-center mb-2">
+                    <FaRegUser className="text-gray-400 mr-2" />
+                    <input
+                      type="name"
+                      name="name"
+                      placeholder="Name"
+                      className="bg-gray-100 outline-none text-sm flex-1"
+                    />
                   </div>
                 </div>
-              </form>
+                <div className="flex flex-col items-center  ">
+                  <div className="bg-gray-100 w-64 p-2 flex items-center mb-2">
+                    <FaRegEnvelope className="text-gray-400 mr-2" />
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Email"
+                      className="bg-gray-100 outline-none text-sm flex-1"
+                    />
+                  </div>
+                </div>
+
+                <div className="flex flex-col items-center  ">
+                  <div className="bg-gray-100 w-64 p-2 flex items-center mb-2">
+                    <MdLockOutline className="text-gray-400 mr-2" />
+                    <input
+                      type="password"
+                      name="password"
+                      placeholder="Password"
+                      className="bg-gray-100 outline-none text-sm flex-1"
+                    />
+                  </div>
+                  <div className="bg-gray-100 w-64 p-2 flex items-center mb-2">
+                    <MdLockOutline className="text-gray-400 mr-2" />
+                    <input
+                      type="password"
+                      name="password"
+                      placeholder="Confirm Password"
+                      className="bg-gray-100 outline-none text-sm flex-1"
+                    />
+                  </div>
+                  <div className="flex justify-between w-64 mb-5">
+                    <lable className="flex items-center text-xs">
+                      <input
+                        type="checkbox"
+                        name="remember"
+                        className=" mr-1 bg-white"
+                      />{" "}
+                      Remember me
+                    </lable>
+                    <a href="#" className="text-xs ">
+                      Forgot Password?
+                    </a>
+                  </div>
+                </div>
+                <a
+                  href="#"
+                  className="border-2 border-cyan-950 text-cyan-950 rounded-full  py-2 px-12 inline-block font-semibold hover:bg-cyan-950 hover:text-white "
+                >
+                  Sign Up
+                </a>
+              </div>
             </div>
+            {/* image */}
+            <div className="w-1/2 bg-cyan-950 text-white rounded-tr-2xl rounded-br-2xl py-36 px-12> "></div>
           </div>
         </div>
       </div>

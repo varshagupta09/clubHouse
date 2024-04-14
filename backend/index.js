@@ -1,6 +1,9 @@
 //Import express
 const express = require('express');
-// const postRouter = require('./routers/postRouter')
+const userRouter = require('./router/userRouter')
+const templateRouter = require('./router/templateRouter')
+const utilRouter = require('./router/utilRouter')
+
 const cors = require('cors');
 
 
@@ -11,11 +14,16 @@ const port = 5500;
 //middleware 
 
 app.use(cors({
-    origin: 'http://localhost:3001'
+    origin: 'http://localhost:3000'
 }));
 
+app.use(express.json());
 
-app.use('/post' , userRouter)
+
+app.use('/user' , userRouter)
+app.use('/template' , templateRouter)
+app.use('/util' , utilRouter)
+
 
 app.get('/', (req, res) => {
     res.send('response from express');
