@@ -1,66 +1,59 @@
 'use client';
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 const templatesearch = () => {
 
-    const [templateList, setTemplateList] = useState([]);
+  const [templateList, setTemplateList] = useState([]);
 
-    const fetchTemplatesData = () => {
-        fetch('http://localhost:5500/template/getall')
-        .then((response) => {
-           return response.json(); 
-        })
-        .then((data) => {
-            console.log(data);
-            setTemplateList(data);
-        })
-        .catch((err) => {
-                console.log(err);
-        });
-    }
+  const fetchTemplatesData = () => {
+    fetch('http://localhost:5500/template/getall')
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        setTemplateList(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
 
-    useEffect(() => {
-      fetchTemplatesData();
-    }, [])
+  useEffect(() => {
+    fetchTemplatesData();
+  }, [])
 
-    const displayTemplates = () => {
-        if(templateList.length === 0){
-            return <h2>No templates found</h2>
-        }else{
-            return templateList.map(template => (
-              <div className="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
-            <a href="#">
-              <img
-                src="https://img.freepik.com/free-psd/body-building-landing-page-template_23-2149998774.jpg?t=st=1713073824~exp=1713077424~hmac=24110c65d634882a5694f2dc7f358b9d7db1b9caf4c0586aa47d2fd02fefd535&w=1800"
-                alt="Product"
-                className="h-80 w-72 object-cover rounded-t-xl"
-              />
-              <div className="px-4 py-3 w-72">
-                <p className="text-lg font-bold text-black truncate block capitalize">
+  const displayTemplates = () => {
+    if (templateList.length === 0) {
+      return <h2>No templates found</h2>
+    } else {
+      return templateList.map(template => (
+        <div className="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
+          <a href="#">
+            <img
+              src={'http://localhost:5500/'+template.image}
+              alt="Product"
+              className="h-40 w-72 object-cover rounded-t-xl"
+            />
+            <div className="px-4 py-3 w-72">
+              <p className="text-lg font-bold text-black truncate block capitalize">
                 {template.title}
-                </p>
-                <div className="flex items-center">
-                  <p className="text-lg font-semibold text-black cursor-auto my-3">
-                  Rs.0/-
-                  </p>
-                  <del>
-                    <p className="text-sm text-gray-600 cursor-auto ml-2">
-                      Rs.199/-
-                    </p>
-                  </del>
-                  <div className="ml-auto">
-                   Preview
-                        
-                   
-                  </div>
+              </p>
+              <div className="flex items-center">
+                <div className="ml-auto">
+                  <Link href={'/templateview/'+template._id} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    View Details
+                  </Link>
                 </div>
               </div>
-            </a>
-          </div>
-            ))
-        }
+            </div>
+          </a>
+        </div>
+      ))
     }
-    
+  }
+
 
   return (
     <div>
@@ -115,7 +108,7 @@ const templatesearch = () => {
           {displayTemplates()}
         </section>
         <div className="text-center py-10 px-10">
-        
+
         </div>
       </>
     </div>
