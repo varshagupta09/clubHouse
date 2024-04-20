@@ -24,6 +24,8 @@ app.use('/user' , userRouter)
 app.use('/template' , templateRouter)
 app.use('/util' , utilRouter)
 
+app.use(express.static('./static/uploads'));
+
 
 app.get('/', (req, res) => {
     res.send('response from express');
