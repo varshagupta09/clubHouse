@@ -32,8 +32,8 @@ const templatesearch = () => {
         <div className="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
           <a href="#">
             <img
-              src={'http://localhost:5500/'+template.image}
-              alt="Product"
+              src={`${process.env.NEXT_PUBLIC_API_URL}/${template.image}`}
+              alt={template.title}
               className="h-40 w-72 object-cover rounded-t-xl"
             />
             <div className="px-4 py-3 w-72">
@@ -42,7 +42,7 @@ const templatesearch = () => {
               </p>
               <div className="flex items-center">
                 <div className="ml-auto">
-                  <Link href={'/templateview/'+template._id} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                  <Link href={'/templateview/' + template._id} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                     View Details
                   </Link>
                 </div>
