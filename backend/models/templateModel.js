@@ -4,9 +4,11 @@ const mySchema = new Schema({
    title: String,
    image: String,
    template:String,
+   tags: String,
    category:String,
    framework:String,
    purpose:String,
+   descripton: String,
    feature:String,
    createdAt: {
        type: Date,

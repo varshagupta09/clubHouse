@@ -3,6 +3,7 @@ const express = require('express');
 const userRouter = require('./router/userRouter')
 const templateRouter = require('./router/templateRouter')
 const utilRouter = require('./router/utilRouter')
+const reviewRouter = require('./router/reviewRouter')
 
 const cors = require('cors');
 
@@ -23,6 +24,7 @@ app.use(express.json());
 app.use('/user' , userRouter)
 app.use('/template' , templateRouter)
 app.use('/util' , utilRouter)
+app.use('/review' , reviewRouter)
 
 app.use(express.static('./static/uploads'));
 
@@ -30,9 +32,5 @@ app.use(express.static('./static/uploads'));
 app.get('/', (req, res) => {
     res.send('response from express');
 });
-
-app.get('/add', (req, res)=> {
-    res.send('add response from exress')
-})
 
 app.listen(port, () => {console.log('server startted'); });

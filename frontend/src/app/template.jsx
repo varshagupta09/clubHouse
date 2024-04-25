@@ -1,16 +1,17 @@
 'use client';
-import React,{useEffect} from 'react';
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
+import { AppProvider } from '@/context/AppContext'
+import React from 'react'
+import Navbar from './(main)/navbar';
+import Footer from '@/components/footer';
 
-const template = ({children}) => {
-  return (
-    <div>
-        <Navbar/>
-        {children}
-        <Footer/>
-    </div>
-  )
+const Template = ({ children }) => {
+    return (
+        <AppProvider>
+          <Navbar/>
+          {children}
+          <Footer/>
+          </AppProvider>
+    )
 }
 
-export default template
+export default Template
