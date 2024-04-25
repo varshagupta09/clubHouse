@@ -1,10 +1,16 @@
 'use client';
 import { AppProvider } from '@/context/AppContext'
 import React from 'react'
+import Navbar from './(main)/navbar';
+import Footer from '@/components/footer';
 
 const Template = ({ children }) => {
     return (
-        <AppProvider>{children}</AppProvider>
+        <AppProvider>
+          <Navbar/>
+          {children}
+          <Footer/>
+          </AppProvider>
     )
 }
 
