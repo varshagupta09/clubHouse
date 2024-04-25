@@ -1,6 +1,10 @@
 'use client';
+import useAppContext from '@/context/AppContext';
 import { useParams } from 'next/navigation'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
+import toast from 'react-hot-toast';
+import StarRatings from 'react-star-ratings';
+import staricon from './star.svg';
 
 const templateview = () => {
 
@@ -8,6 +12,10 @@ const templateview = () => {
   const [templateDetails, setTemplateDetails] = useState(null);
 
   const [selSection, setSelSection] = useState("description");
+  const [rating, setRating] = useState(5);
+  const [reviewList, setReviewList] = useState([]);
+  const { currentUser } = useAppContext();
+  const reviewRef = useRef();
 
   const fetchTemplatesData = () => {
     fetch('http://localhost:5500/template/getbyid/' + id)
@@ -23,12 +31,122 @@ const templateview = () => {
       });
   }
 
+  const fetchReviews = () => {
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/review/getbytemplate/${id}`)
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        setReviewList(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+
   useEffect(() => {
     fetchTemplatesData();
+    fetchReviews();
   }, [])
 
-  const ratingForm = (rating) => {
-    return 
+  const submitReview = () => {
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/review/add`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-auth-token': currentUser.token
+      },
+      body: JSON.stringify({
+        template: id,
+        rating: rating,
+        review: reviewRef.current.value
+      })
+    })
+      .then((response) => {
+        if (response.status === 200) {
+          toast.success('Review Added Successfully');
+          response.json()
+            .then((data) => {
+              console.log(data);
+              fetchReviews();
+            })
+        } else {
+          toast.error('Failed to add review');
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  const ratingForm = () => {
+    return <div>
+
+      <StarRatings
+        rating={rating}
+        starRatedColor="#00fff2"
+        changeRating={setRating}
+
+        numberOfStars={5}
+        name='rating'
+      />
+
+      <textarea
+        className="mt-10 text-slate-700 block w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 bg-white"
+        rows={5}
+        ref={reviewRef}
+        placeholder="Write a Review..."
+      ></textarea>
+
+      <button type='button'
+        onClick={submitReview}
+        className="my-5 w-full flex justify-center bg-blue-500 text-gray-100 p-4  rounded-full tracking-wide font-semibold  focus:outline-none focus:shadow-outline hover:bg-blue-600 shadow-lg cursor-pointer transition ease-in duration-300"
+      >
+        Submit Review
+      </button>
+
+    </div>
+  }
+
+  const displayReviews = () => {
+    return <section className="text-gray-600 body-font">
+      <div className="container px-5 py-24 mx-auto">
+        {
+          reviewList.map(review => (
+            <div className="py-8 px-4 lg:w-1/3">
+              <div className="h-full flex items-start">
+                <div className="w-12 flex-shrink-0 flex flex-col text-center leading-none">
+                  <span className="text-gray-500 pb-2 mb-2 border-b-2 border-gray-200">
+                    {new Date(review.createdAt).getMonth()}
+                  </span>
+                  <span className="font-medium text-lg text-gray-800 title-font leading-none">
+                    {new Date(review.createdAt).getDate()}
+                  </span>
+                </div>
+                <div className="flex-grow pl-6">
+                  <h2 className="tracking-widest text-xs title-font font-medium text-indigo-500 mb-1">
+                    {/* {review.user.name} */}
+                  </h2>
+                  <div className='flex'>
+                    <img src={staricon} alt="" />
+                    <img src={staricon} alt="" />
+                    <img src={staricon} alt="" />
+                    <img src={staricon} alt="" />
+                    <img src={staricon} alt="" />
+                  </div>
+                  <p className="leading-relaxed mb-5">
+                    {review.review}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
   }
 
   const displayTemplate = () => {
@@ -129,6 +247,11 @@ const templateview = () => {
                     <div className="mt-8">
                       <h3 className="text-lg font-bold text-white">Reviews</h3>
 
+                      {
+                        ratingForm()
+                      }
+
+                      {displayReviews()}
 
                     </div>
                   </div>

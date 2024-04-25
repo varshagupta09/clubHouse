@@ -1,10 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const Model = require("../models/reviewModel");
+const verifyToken = require("./verifyToken");
 
-router.post("/add", (req, res) => {
-  console.log(req.body);
-  //Storing data to MongoDb
+router.post("/add", verifyToken, (req, res) => {
+    req.body.user = req.user._id;
   new Model(req.body).save() //to add the data in database
     .then((result) => {
       res.json(result);
@@ -14,16 +14,9 @@ router.post("/add", (req, res) => {
       res.status(500).json(err);
     });
 });
-router.post("/delete", (req, res) => {
-  res.send("Data deleted");
-});
-router.post("/update", (req, res) => {
-  res.send("updated data");
-});
 
-
-router.get("/getall", (req, res) => {
-  Model.find({}) //empty brackets will give all the data from the database
+router.get("/getbytemplate/:id", (req, res) => {
+  Model.find({template : req.params.id}).populate("user")
     .then((result) => {
       res.json(result)
     }).catch((err) => {
@@ -54,7 +47,16 @@ router.get("/getbycategory/:category", (req, res) => {
     });
 });
 
-
+// getall
+router.get("/getall", (req, res) => {
+  Model.find()
+    .then((result) => {
+      res.json(result)
+    }).catch((err) => {
+      console.error(err)
+      res.status(500).json(err)
+    });
+});
 
 router.delete("/delete/:id", (req, res) => {
   Model.findByIdAndDelete(req.params.id)
