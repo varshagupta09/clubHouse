@@ -1,7 +1,92 @@
-import React from "react";
+'use client';
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import { IconTrash } from "@tabler/icons-react";
+import toast from "react-hot-toast";
 
 const templateManagement = () => {
+
+  const [templateList, setTemplateList] = useState([]);
+
+  const fetchTemplates = () => {
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/template/getall`)
+      .then((response) => {
+        return response.json();
+      })
+      .then(data => {
+        console.log(data);
+        setTemplateList(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  useEffect(() => {
+    fetchTemplates();
+  }, [])
+
+  const deleteTemplate = (id) => {
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/template/delete/${id}`, {
+      method: 'DELETE',
+    })
+      .then((response) => {
+        if (response.status === 200) {
+          toast.success('Template deleted successfully');
+          fetchTemplates();
+        } else {
+          toast.error('Failed to delete template');
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.error('Failed to delete template');
+      });
+  }
+
+  const displayTemplates = () => {
+    if (templateList.length === 0) {
+      return <h2>No templates found</h2>
+    } else {
+      return templateList.map(template => (
+        <li className="py-3 sm:py-4">
+          <div className="grid grid-cols-5 gap-4 items-center ">
+            <div className="flex-shrink-0">
+              <img
+                className="w-36 h-24 rounded-md border-white border-2"
+                src={`${process.env.NEXT_PUBLIC_API_URL}/${template.image}`}
+                alt={template.title}
+              />
+            </div>
+
+            <div className="flex-1 min-w-0 ms-4">
+              <p className="text-sm font-medium text-gray-900  dark:text-white">
+                {template.title}
+              </p>
+
+            </div>
+            <div className="flex-1 min-w-0 ms-4">
+              <p className="text-sm  text-gray-900  dark:text-white">
+                {template.category}
+              </p>
+            </div>
+            <div className=" min-w-0 ms-4">
+              <p className="text-sm  text-gray-900  dark:text-white">
+                {template.framework}
+              </p>
+            </div>
+
+            <div className="min-w-0 ms-4">
+              <p className="text-sm  text-gray-900  dark:text-white">
+                <IconTrash size={24} color="red" className="cursor-pointer" onClick={() => deleteTemplate(template._id)} />
+              </p>
+            </div>
+          </div>
+        </li>
+      ))
+    }
+  }
+
   return (
     <>
       <nav className="fixed top-0 z-50 w-full bg-white border-b border-blue-200 dark:bg-blue-800 dark:border-blue-700">
@@ -171,9 +256,9 @@ const templateManagement = () => {
                 </svg>
 
                 <Link href="/admin/dashboard">
-                <span className="ms-3">Dashboard</span>
-                   
-                  </Link>
+                  <span className="ms-3">Dashboard</span>
+
+                </Link>
               </a>
             </li>
             <li>
@@ -196,24 +281,24 @@ const templateManagement = () => {
               </a>
             </li>
             <li>
-                <a
-                  href="#"
-                  className="flex items-center p-2 text-blue-900 rounded-lg dark:text-white hover:bg-blue-100 dark:hover:bg-blue-700 group"
+              <a
+                href="#"
+                className="flex items-center p-2 text-blue-900 rounded-lg dark:text-white hover:bg-blue-100 dark:hover:bg-blue-700 group"
+              >
+                <svg
+                  className="flex-shrink-0 w-5 h-5 text-blue-500 transition duration-75 dark:text-blue-400 group-hover:text-blue-900 dark:group-hover:text-white"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
                 >
-                  <svg
-                    className="flex-shrink-0 w-5 h-5 text-blue-500 transition duration-75 dark:text-blue-400 group-hover:text-blue-900 dark:group-hover:text-white"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="m17.418 3.623-.018-.008a6.713 6.713 0 0 0-2.4-.569V2h1a1 1 0 1 0 0-2h-2a1 1 0 0 0-1 1v2H9.89A6.977 6.977 0 0 1 12 8v5h-2V8A5 5 0 1 0 0 8v6a1 1 0 0 0 1 1h8v4a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-4h6a1 1 0 0 0 1-1V8a5 5 0 0 0-2.582-4.377ZM6 12H4a1 1 0 0 1 0-2h2a1 1 0 0 1 0 2Z" />
-                  </svg>
-                  <span className="flex-1 ms-3 whitespace-nowrap">
-                    Analytics
-                  </span>
-                </a>
-              </li>
+                  <path d="m17.418 3.623-.018-.008a6.713 6.713 0 0 0-2.4-.569V2h1a1 1 0 1 0 0-2h-2a1 1 0 0 0-1 1v2H9.89A6.977 6.977 0 0 1 12 8v5h-2V8A5 5 0 1 0 0 8v6a1 1 0 0 0 1 1h8v4a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-4h6a1 1 0 0 0 1-1V8a5 5 0 0 0-2.582-4.377ZM6 12H4a1 1 0 0 1 0-2h2a1 1 0 0 1 0 2Z" />
+                </svg>
+                <span className="flex-1 ms-3 whitespace-nowrap">
+                  Analytics
+                </span>
+              </a>
+            </li>
             <li>
               <a
                 href="#"
@@ -248,7 +333,7 @@ const templateManagement = () => {
                 <span className="flex-1 ms-3 whitespace-nowrap">Setting</span>
               </a>
             </li>
-           
+
           </ul>
         </div>
       </aside>
@@ -338,822 +423,14 @@ const templateManagement = () => {
 
                     <div className="flex-1 min-w-0 ms-4">
                       <p className="text-sm font-medium text-gray-900  dark:text-white">
-                       Delete
+                        Delete
                       </p>
                     </div>
                   </div>
                 </li>
-                <li className="py-3 sm:py-4">
-                  <div className="grid grid-cols-5 gap-4 items-center ">
-                    <div className="flex-shrink-0">
-                      <img
-                        className="w-36 h-24 rounded-md border-white border-2"
-                        src="/docs/images/people/profile-picture-1.jpg"
-                        alt="Preview"
-                      />
-                    </div>
-
-                    <div className="flex-1 min-w-0 ms-4">
-                    <p className="text-sm font-medium text-gray-900  dark:text-white">
-                        <svg
-                        className="w-6 h-6 text-gray-800 dark:text-white"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          stroke="currentColor"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 1v3m5-3v3m5-3v3M1 7h7m1.506 3.429 2.065 2.065M19 7h-2M2 3h16a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Zm6 13H6v-2l5.227-5.292a1.46 1.46 0 0 1 2.065 2.065L8 16Z"
-                        />
-                      </svg>
-                      </p>
-                      
-                    </div>
-                    <div className="flex-1 min-w-0 ms-4">
-                      <p className="text-sm  text-gray-900  dark:text-white">
-                      <div>
-                             {/* Dropdown menu */}
-                        <button
-                          id="dropdownDelayButton"
-                          data-dropdown-toggle="dropdownDelay"
-                          data-dropdown-delay={500}
-                          data-dropdown-trigger="hover"
-                          className="text-white    focus:outline-none font-medium rounded-lg text-sm  text-center inline-flex items-center "
-                          type="button"
-                        >
-                         Visibility
-                          <svg
-                            className="w-2.5 h-2.5 ms-3"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 10 6"
-                          >
-                            <path
-                              stroke="currentColor"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="m1 1 4 4 4-4"
-                            />
-                          </svg>
-                        </button>
-                        
-                       
-                        <div
-                          id="dropdownDelay"
-                          className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
-                        >
-                          <ul
-                            className="py-2 text-sm text-gray-700 dark:text-gray-200"
-                            aria-labelledby="dropdownDelayButton"
-                          >
-                            <li>
-                              <a
-                                href="#"
-                                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                              >
-                                Public
-                              </a>
-                            </li>
-                            <li>
-                              <a
-                                href="#"
-                                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                              >
-                                Private
-                              </a>
-                            </li>
-                            <li>
-                              <a
-                                href="#"
-                                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                              >
-                                Not Published
-                              </a>
-                            </li>
-                           
-                          </ul>
-                        </div>
-                        </div>
-                      </p>
-                    </div>
-                    <div className=" min-w-0 ms-4">
-                      <p className="text-sm  text-gray-900  dark:text-white">
-                        <svg
-                          class="h-6 w-6 text-white"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                          />
-                        </svg>
-                      </p>
-                    </div>
-
-                    <div className=" min-w-0 ms-4">
-                      <p className="text-sm  text-gray-900  dark:text-white">
-                        <svg
-                          class="h-6 w-6 text-white"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        >
-                          {" "}
-                          <path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z" />{" "}
-                          <line x1="18" y1="9" x2="12" y2="15" />{" "}
-                          <line x1="12" y1="9" x2="18" y2="15" />
-                        </svg>
-                      </p>
-                    </div>
-                  </div>
-                </li>
-                <li className="py-3 sm:py-4">
-                  <div className="grid grid-cols-5 gap-4 items-center ">
-                    <div className="flex-shrink-0">
-                      <img
-                        className="w-36 h-24 rounded-md border-white border-2"
-                        src="/docs/images/people/profile-picture-1.jpg"
-                        alt="Preview"
-                      />
-                    </div>
-
-                    <div className="flex-1 min-w-0 ms-4">
-                      <svg
-                        className="w-6 h-6 text-gray-800 dark:text-white"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          stroke="currentColor"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 1v3m5-3v3m5-3v3M1 7h7m1.506 3.429 2.065 2.065M19 7h-2M2 3h16a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Zm6 13H6v-2l5.227-5.292a1.46 1.46 0 0 1 2.065 2.065L8 16Z"
-                        />
-                      </svg>
-                    </div>
-                    <div className=" min-w-0 ms-4">
-                      <p className="text-sm  text-gray-900  dark:text-white">
-                      <div>
-                             {/* Dropdown menu */}
-                        <button
-                          id="dropdownDelayButton"
-                          data-dropdown-toggle="dropdownDelay"
-                          data-dropdown-delay={500}
-                          data-dropdown-trigger="hover"
-                          className="text-white    focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center "
-                          type="button"
-                        >
-                         Visibility
-                          <svg
-                            className="w-2.5 h-2.5 ms-3"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 10 6"
-                          >
-                            <path
-                              stroke="currentColor"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="m1 1 4 4 4-4"
-                            />
-                          </svg>
-                        </button>
-                        
-                       
-                        <div
-                          id="dropdownDelay"
-                          className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
-                        >
-                          <ul
-                            className="py-2 text-sm text-gray-700 dark:text-gray-200"
-                            aria-labelledby="dropdownDelayButton"
-                          >
-                            <li>
-                              <a
-                                href="#"
-                                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                              >
-                                Public
-                              </a>
-                            </li>
-                            <li>
-                              <a
-                                href="#"
-                                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                              >
-                                Private
-                              </a>
-                            </li>
-                            <li>
-                              <a
-                                href="#"
-                                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                              >
-                                Not Published
-                              </a>
-                            </li>
-                           
-                          </ul>
-                        </div>
-                        </div>
-                      </p>
-                    </div>
-                    <div className=" min-w-0 ms-4">
-                      <p className="text-sm  text-gray-900  dark:text-white">
-                        <svg
-                          class="h-6 w-6 text-white"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                          />
-                        </svg>
-                      </p>
-                    </div>
-
-                    <div className=" min-w-0 ms-4">
-                      <p className="text-sm  text-gray-900  dark:text-white">
-                        <svg
-                          class="h-6 w-6 text-white"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        >
-                          {" "}
-                          <path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z" />{" "}
-                          <line x1="18" y1="9" x2="12" y2="15" />{" "}
-                          <line x1="12" y1="9" x2="18" y2="15" />
-                        </svg>
-                      </p>
-                    </div>
-                  </div>
-                </li>
-
-                <li className="py-3 sm:py-4">
-                  <div className="grid grid-cols-5 gap-4 items-center ">
-                    <div className="flex-shrink-0">
-                      <img
-                        className="w-36 h-24 rounded-md border-white border-2"
-                        src="/docs/images/people/profile-picture-1.jpg"
-                        alt="Preview"
-                      />
-                    </div>
-
-                    <div className="flex-1 min-w-0 ms-4">
-                      <svg
-                        className="w-6 h-6 text-gray-800 dark:text-white"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          stroke="currentColor"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 1v3m5-3v3m5-3v3M1 7h7m1.506 3.429 2.065 2.065M19 7h-2M2 3h16a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Zm6 13H6v-2l5.227-5.292a1.46 1.46 0 0 1 2.065 2.065L8 16Z"
-                        />
-                      </svg>
-                    </div>
-                    <div className=" min-w-0 ms-4">
-                      <p className="text-sm  text-gray-900  dark:text-white">
-                      <div>
-                             {/* Dropdown menu */}
-                        <button
-                          id="dropdownDelayButton"
-                          data-dropdown-toggle="dropdownDelay"
-                          data-dropdown-delay={500}
-                          data-dropdown-trigger="hover"
-                          className="text-white    focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center "
-                          type="button"
-                        >
-                         Visibility
-                          <svg
-                            className="w-2.5 h-2.5 ms-3"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 10 6"
-                          >
-                            <path
-                              stroke="currentColor"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="m1 1 4 4 4-4"
-                            />
-                          </svg>
-                        </button>
-                        
-                       
-                        <div
-                          id="dropdownDelay"
-                          className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
-                        >
-                          <ul
-                            className="py-2 text-sm text-gray-700 dark:text-gray-200"
-                            aria-labelledby="dropdownDelayButton"
-                          >
-                            <li>
-                              <a
-                                href="#"
-                                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                              >
-                                Public
-                              </a>
-                            </li>
-                            <li>
-                              <a
-                                href="#"
-                                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                              >
-                                Private
-                              </a>
-                            </li>
-                            <li>
-                              <a
-                                href="#"
-                                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                              >
-                                Not Published
-                              </a>
-                            </li>
-                           
-                          </ul>
-                        </div>
-                        </div>
-                      </p>
-                    </div>
-                    <div className=" min-w-0 ms-4">
-                      <p className="text-sm  text-gray-900  dark:text-white">
-                        <svg
-                          class="h-6 w-6 text-white"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                          />
-                        </svg>{" "}
-                      </p>
-                    </div>
-
-                    <div className=" min-w-0 ms-4">
-                      <p className="text-sm  text-gray-900  dark:text-white">
-                        <svg
-                          class="h-6 w-6 text-white"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        >
-                          {" "}
-                          <path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z" />{" "}
-                          <line x1="18" y1="9" x2="12" y2="15" />{" "}
-                          <line x1="12" y1="9" x2="18" y2="15" />
-                        </svg>
-                      </p>
-                    </div>
-                  </div>
-                </li>
-
-                <li className="py-3 sm:py-4">
-                  <div className="grid grid-cols-5 gap-4 items-center ">
-                    <div className="flex-shrink-0">
-                      <img
-                        className="w-36 h-24 rounded-md border-white border-2"
-                        src="/docs/images/people/profile-picture-1.jpg"
-                        alt="Preview"
-                      />
-                    </div>
-
-                    <div className="flex-1 min-w-0 ms-4">
-                      <svg
-                        className="w-6 h-6 text-gray-800 dark:text-white"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          stroke="currentColor"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 1v3m5-3v3m5-3v3M1 7h7m1.506 3.429 2.065 2.065M19 7h-2M2 3h16a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Zm6 13H6v-2l5.227-5.292a1.46 1.46 0 0 1 2.065 2.065L8 16Z"
-                        />
-                      </svg>
-                    </div>
-                    <div className=" min-w-0 ms-4">
-                      <p className="text-sm  text-gray-900  dark:text-white">
-                      <div>
-                             {/* Dropdown menu */}
-                        <button
-                          id="dropdownDelayButton"
-                          data-dropdown-toggle="dropdownDelay"
-                          data-dropdown-delay={500}
-                          data-dropdown-trigger="hover"
-                          className="text-white    focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center "
-                          type="button"
-                        >
-                         Visibility
-                          <svg
-                            className="w-2.5 h-2.5 ms-3"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 10 6"
-                          >
-                            <path
-                              stroke="currentColor"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="m1 1 4 4 4-4"
-                            />
-                          </svg>
-                        </button>
-                        
-                       
-                        <div
-                          id="dropdownDelay"
-                          className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
-                        >
-                          <ul
-                            className="py-2 text-sm text-gray-700 dark:text-gray-200"
-                            aria-labelledby="dropdownDelayButton"
-                          >
-                            <li>
-                              <a
-                                href="#"
-                                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                              >
-                                Public
-                              </a>
-                            </li>
-                            <li>
-                              <a
-                                href="#"
-                                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                              >
-                                Private
-                              </a>
-                            </li>
-                            <li>
-                              <a
-                                href="#"
-                                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                              >
-                                Not Published
-                              </a>
-                            </li>
-                           
-                          </ul>
-                        </div>
-                        </div>
-                      </p>
-                    </div>
-                    <div className=" min-w-0 ms-4">
-                      <p className="text-sm  text-gray-900  dark:text-white">
-                        <svg
-                          class="h-6 w-6 text-white"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                          />
-                        </svg>
-                      </p>
-                    </div>
-
-                    <div className=" min-w-0 ms-4">
-                      <p className="text-sm  text-gray-900  dark:text-white">
-                        <svg
-                          class="h-6 w-6 text-white"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        >
-                          {" "}
-                          <path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z" />{" "}
-                          <line x1="18" y1="9" x2="12" y2="15" />{" "}
-                          <line x1="12" y1="9" x2="18" y2="15" />
-                        </svg>
-                      </p>
-                    </div>
-                  </div>
-                </li>
-
-                <li className="py-3 sm:py-4">
-                  <div className="grid grid-cols-5 gap-4 items-center ">
-                    <div className="flex-shrink-0">
-                      <img
-                        className="w-36 h-24 rounded-md border-white border-2"
-                        src="/docs/images/people/profile-picture-1.jpg"
-                        alt="Preview"
-                      />
-                    </div>
-
-                    <div className="flex-1 min-w-0 ms-4">
-                      <svg
-                        className="w-6 h-6 text-gray-800 dark:text-white"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          stroke="currentColor"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 1v3m5-3v3m5-3v3M1 7h7m1.506 3.429 2.065 2.065M19 7h-2M2 3h16a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Zm6 13H6v-2l5.227-5.292a1.46 1.46 0 0 1 2.065 2.065L8 16Z"
-                        />
-                      </svg>
-                    </div>
-                    <div className=" min-w-0 ms-4">
-                      <p className="text-sm  text-gray-900  dark:text-white">
-                      <div>
-                             {/* Dropdown menu */}
-                        <button
-                          id="dropdownDelayButton"
-                          data-dropdown-toggle="dropdownDelay"
-                          data-dropdown-delay={500}
-                          data-dropdown-trigger="hover"
-                          className="text-white    focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center "
-                          type="button"
-                        >
-                         Visibility
-                          <svg
-                            className="w-2.5 h-2.5 ms-3"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 10 6"
-                          >
-                            <path
-                              stroke="currentColor"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="m1 1 4 4 4-4"
-                            />
-                          </svg>
-                        </button>
-                        
-                       
-                        <div
-                          id="dropdownDelay"
-                          className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
-                        >
-                          <ul
-                            className="py-2 text-sm text-gray-700 dark:text-gray-200"
-                            aria-labelledby="dropdownDelayButton"
-                          >
-                            <li>
-                              <a
-                                href="#"
-                                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                              >
-                                Public
-                              </a>
-                            </li>
-                            <li>
-                              <a
-                                href="#"
-                                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                              >
-                                Private
-                              </a>
-                            </li>
-                            <li>
-                              <a
-                                href="#"
-                                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                              >
-                                Not Published
-                              </a>
-                            </li>
-                           
-                          </ul>
-                        </div>
-                        </div>
-                      </p>
-                    </div>
-                    <div className=" min-w-0 ms-4">
-                      <p className="text-sm  text-gray-900  dark:text-white">
-                        <svg
-                          class="h-6 w-6 text-white"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                          />
-                        </svg>
-                      </p>
-                    </div>
-
-                    <div className=" min-w-0 ms-4">
-                      <p className="text-sm  text-gray-900  dark:text-white">
-                        <svg
-                          class="h-6 w-6 text-white"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        >
-                          {" "}
-                          <path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z" />{" "}
-                          <line x1="18" y1="9" x2="12" y2="15" />{" "}
-                          <line x1="12" y1="9" x2="18" y2="15" />
-                        </svg>
-                      </p>
-                    </div>
-                  </div>
-                </li>
-
-                <li className="py-3 sm:py-4">
-                  <div className="grid grid-cols-5 gap-4 items-center ">
-                    <div className="flex-shrink-0">
-                      <img
-                        className="w-36 h-24 rounded-md border-white border-2"
-                        src="/docs/images/people/profile-picture-1.jpg"
-                        alt="Preview"
-                      />
-                    </div>
-
-                    <div className="flex-1 min-w-0 ms-4">
-                      <svg
-                        className="w-6 h-6 text-gray-800 dark:text-white"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          stroke="currentColor"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 1v3m5-3v3m5-3v3M1 7h7m1.506 3.429 2.065 2.065M19 7h-2M2 3h16a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Zm6 13H6v-2l5.227-5.292a1.46 1.46 0 0 1 2.065 2.065L8 16Z"
-                        />
-                      </svg>
-                    </div>
-                    <div className=" min-w-0 ms-4">
-                      <p className="text-sm  text-gray-900  dark:text-white">
-                        <div>
-                             {/* Dropdown menu */}
-                        <button
-                          id="dropdownDelayButton"
-                          data-dropdown-toggle="dropdownDelay"
-                          data-dropdown-delay={500}
-                          data-dropdown-trigger="hover"
-                          className="text-white    focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center "
-                          type="button"
-                        >
-                         Visibility
-                          <svg
-                            className="w-2.5 h-2.5 ms-3"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 10 6"
-                          >
-                            <path
-                              stroke="currentColor"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="m1 1 4 4 4-4"
-                            />
-                          </svg>
-                        </button>
-                        
-                       
-                        <div
-                          id="dropdownDelay"
-                          className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
-                        >
-                          <ul
-                            className="py-2 text-sm text-gray-700 dark:text-gray-200"
-                            aria-labelledby="dropdownDelayButton"
-                          >
-                            <li>
-                              <a
-                                href="#"
-                                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                              >
-                                Public
-                              </a>
-                            </li>
-                            <li>
-                              <a
-                                href="#"
-                                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                              >
-                                Private
-                              </a>
-                            </li>
-                            <li>
-                              <a
-                                href="#"
-                                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                              >
-                                Not Published
-                              </a>
-                            </li>
-                           
-                          </ul>
-                        </div>
-                        </div>
-                      </p>
-                    </div>
-                    <div className=" min-w-0 ms-4">
-                      <p className="text-sm  text-gray-900  dark:text-white">
-                        <svg
-                          class="h-6 w-6 text-white"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                          />
-                        </svg>
-                      </p>
-                    </div>
-
-                    <div className=" min-w-0 ms-4">
-                      <p className="text-sm  text-gray-900  dark:text-white">
-                        <svg
-                          class="h-6 w-6 text-white"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        >
-                          {" "}
-                          <path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z" />{" "}
-                          <line x1="18" y1="9" x2="12" y2="15" />{" "}
-                          <line x1="12" y1="9" x2="18" y2="15" />
-                        </svg>
-                      </p>
-                    </div>
-                  </div>
-                </li>
+                {
+                  displayTemplates()
+                }
               </ul>
             </div>
           </div>
