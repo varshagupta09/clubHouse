@@ -5,6 +5,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import toast from 'react-hot-toast';
 import StarRatings from 'react-star-ratings';
 import staricon from './star.svg';
+import Navbar from '@/components/navbar';
 
 const templateview = () => {
 
@@ -82,7 +83,10 @@ const templateview = () => {
   }
 
   const ratingForm = () => {
-    return <div>
+    return 
+    <div>
+
+    
 
       <StarRatings
         rating={rating}

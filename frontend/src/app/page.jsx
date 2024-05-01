@@ -1,6 +1,7 @@
 "use client";
 import Footer from "@/components/footer";
 import { TypewriterEffectSmooth } from "../components/ui/typewriter-effect";
+import Navbar from "@/components/navbar";
 export default function TypewriterEffectSmoothDemo() {
   const words = [
     {
@@ -22,6 +23,7 @@ export default function TypewriterEffectSmoothDemo() {
   ];
   return (
     <>
+      <Navbar/>
       <div className="flex flex-col items-center justify-center h-[40rem]  ">
         <p className="text-neutral-600 dark:text-neutral-200 text-xs sm:text-base  ">
           The road to freedom starts from here
