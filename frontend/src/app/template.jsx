@@ -7,7 +7,6 @@ const Template = ({ children }) => {
     return (
         <AppProvider>
             {children}
-            <Footer />
         </AppProvider>
     )
 }
