@@ -3,6 +3,7 @@ import { twMerge } from "tailwind-merge";
 import Navbar from '@/components/navbar'
 import React from 'react'
 
+
 const Home = () => {
   return (
     <>

@@ -3,9 +3,9 @@ import Link from "next/link";
 
 const adminDashboard = () => {
   return (
-    <>
-      <>
-        <nav className="fixed top-0 z-50 w-full bg-white border-b border-blue-200 dark:bg-blue-800 dark:border-blue-700">
+    <div>
+      <div>
+        {/* <nav className="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
           <div className="px-3 py-3 lg:px-5 lg:pl-3">
             <div className="flex items-center justify-between">
               <div className="flex items-center justify-start rtl:justify-end">
@@ -14,7 +14,7 @@ const adminDashboard = () => {
                   data-drawer-toggle="logo-sidebar"
                   aria-controls="logo-sidebar"
                   type="button"
-                  className="inline-flex items-center p-2 text-sm text-blue-500 rounded-lg sm:hidden hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-200 dark:text-blue-400 dark:hover:bg-blue-700 dark:focus:ring-blue-600"
+                  className="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                 >
                   <span className="sr-only">Open sidebar</span>
                   <svg
@@ -44,7 +44,7 @@ const adminDashboard = () => {
                   <div className="relative">
                     <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                       <svg
-                        className="w-4 h-4 text-blue-500 dark:text-blue-400"
+                        className="w-4 h-4 text-gray-500 dark:text-gray-400"
                         aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -62,7 +62,7 @@ const adminDashboard = () => {
                     <input
                       type="search"
                       id="default-search"
-                      className="block w-full p-2 ps-8 text-sm text-blue-900 border border-blue-300 rounded-lg bg-blue-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-blue-700 dark:border-blue-600 dark:placeholder-blue-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      className="block w-full p-2 ps-8 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-gray-500 focus:border-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-500 dark:focus:border-gray-500"
                       placeholder="Search Templates..."
                       required=""
                     />
@@ -74,7 +74,7 @@ const adminDashboard = () => {
                   <div>
                     <button
                       type="button"
-                      className="flex text-sm bg-blue-800 rounded-full focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-600"
+                      className="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
                       aria-expanded="false"
                       data-dropdown-toggle="dropdown-user"
                     >
@@ -87,18 +87,18 @@ const adminDashboard = () => {
                     </button>
                   </div>
                   <div
-                    className="z-50 hidden my-4 text-base list-none bg-white divide-y divide-blue-100 rounded shadow dark:bg-blue-700 dark:divide-blue-600"
+                    className="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600"
                     id="dropdown-user"
                   >
                     <div className="px-4 py-3" role="none">
                       <p
-                        className="text-sm text-blue-900 dark:text-white"
+                        className="text-sm text-gray-900 dark:text-white"
                         role="none"
                       >
                         User Name
                       </p>
                       <p
-                        className="text-sm font-medium text-blue-900 truncate dark:text-blue-300"
+                        className="text-sm font-medium text-gray-900 truncate dark:text-gray-300"
                         role="none"
                       >
                         usermainid@flowbite.com
@@ -108,7 +108,7 @@ const adminDashboard = () => {
                       <li>
                         <a
                           href="#"
-                          className="block px-4 py-2 text-sm text-blue-700 hover:bg-blue-100 dark:text-blue-300 dark:hover:bg-blue-600 dark:hover:text-white"
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
                           role="menuitem"
                         >
                           Dashboard
@@ -117,7 +117,7 @@ const adminDashboard = () => {
                       <li>
                         <a
                           href="#"
-                          className="block px-4 py-2 text-sm text-blue-700 hover:bg-blue-100 dark:text-blue-300 dark:hover:bg-blue-600 dark:hover:text-white"
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
                           role="menuitem"
                         >
                           Settings
@@ -126,7 +126,7 @@ const adminDashboard = () => {
                       <li>
                         <a
                           href="#"
-                          className="block px-4 py-2 text-sm text-blue-700 hover:bg-blue-100 dark:text-blue-300 dark:hover:bg-blue-600 dark:hover:text-white"
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
                           role="menuitem"
                         >
                           Earnings
@@ -135,7 +135,7 @@ const adminDashboard = () => {
                       <li>
                         <a
                           href="#"
-                          className="block px-4 py-2 text-sm text-blue-700 hover:bg-blue-100 dark:text-blue-300 dark:hover:bg-blue-600 dark:hover:text-white"
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
                           role="menuitem"
                         >
                           Sign out
@@ -147,21 +147,25 @@ const adminDashboard = () => {
               </div>
             </div>
           </div>
-        </nav>
-        <aside
+        </nav> */}
+      
+        <div className=" w-full bg-gray-700 ">
+        <div style={{ display: 'flex', width: '100%' }}>
+      <div style={{ width: '20%' }}>
+      <div
           id="logo-sidebar"
-          className="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-blue-200 sm:translate-x-0 dark:bg-blue-800 dark:border-blue-700"
+          className=" z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700"
           aria-label="Sidebar"
         >
-          <div className="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-blue-800">
+          <div className="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
             <ul className="space-y-2 font-medium">
               <li>
                 <a
                   href="#"
-                  className="flex items-center p-2 text-blue-900 rounded-lg dark:text-white hover:bg-blue-100 dark:hover:bg-blue-700 group"
+                  className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                 >
                   <svg
-                    className="w-5 h-5 text-blue-500 transition duration-75 dark:text-blue-400 group-hover:text-blue-900 dark:group-hover:text-white"
+                    className="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="currentColor"
@@ -176,10 +180,10 @@ const adminDashboard = () => {
               <li>
                 <a
                   href="#"
-                  className="flex items-center p-2 text-blue-900 rounded-lg dark:text-white hover:bg-blue-100 dark:hover:bg-blue-700 group"
+                  className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                 >
                   <svg
-                    className="flex-shrink-0 w-5 h-5 text-blue-500 transition duration-75 dark:text-blue-400 group-hover:text-blue-900 dark:group-hover:text-white"
+                    className="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="currentColor"
@@ -198,10 +202,10 @@ const adminDashboard = () => {
               <li>
                 <a
                   href="#"
-                  className="flex items-center p-2 text-blue-900 rounded-lg dark:text-white hover:bg-blue-100 dark:hover:bg-blue-700 group"
+                  className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                 >
                   <svg
-                    className="flex-shrink-0 w-5 h-5 text-blue-500 transition duration-75 dark:text-blue-400 group-hover:text-blue-900 dark:group-hover:text-white"
+                    className="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="currentColor"
@@ -217,10 +221,10 @@ const adminDashboard = () => {
               <li>
                 <a
                   href="#"
-                  className="flex items-center p-2 text-blue-900 rounded-lg dark:text-white hover:bg-blue-100 dark:hover:bg-blue-700 group"
+                  className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                 >
                   <svg
-                    className="flex-shrink-0 w-5 h-5 text-blue-500 transition duration-75 dark:text-blue-400 group-hover:text-blue-900 dark:group-hover:text-white"
+                    className="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="currentColor"
@@ -234,10 +238,10 @@ const adminDashboard = () => {
               <li>
                 <a
                   href="#"
-                  className="flex items-center p-2 text-blue-900 rounded-lg dark:text-white hover:bg-blue-100 dark:hover:bg-blue-700 group"
+                  className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                 >
                   <svg
-                    className="flex-shrink-0 w-5 h-5 text-blue-500 transition duration-75 dark:text-blue-400 group-hover:text-blue-900 dark:group-hover:text-white"
+                    className="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="currentColor"
@@ -253,16 +257,16 @@ const adminDashboard = () => {
            
             </ul>
           </div>
-        </aside>
-        <div className="p-4 sm:ml-64 bg-blue-950">
-          <div className="p-4  mt-14 ">
+        </div>      </div>
+      <div style={{ width: '80%'}}>
+      <div className="p-4  mt-14 ">
             <div className="p-4 text-2xl font-semibold text-white ">
               <h1>Admin Dashboard</h1>
             </div>
 
             <div className="grid grid-cols-3 gap-20 mb-4 items-center  ">
-              <div className="flex items-center justify-center border-2  rounded border-blue-700 bg-blue-50 h-96 w-96 dark:bg-blue-800">
-                <div className=" flex items-center justify-center border-2 border-dashed border-blue-700 h-80 w-80">
+              <div className="flex items-center justify-center border-2  rounded border-gray-700 bg-gray-50 h-96 w-96 dark:bg-gray-800">
+                <div className=" flex items-center justify-center border-2 border-dashed border-gray-700 h-80 w-80">
                   <label className="flex flex-col group text-center ">
                     {/* dfds */}
                     <div className="flex flex-col items-center justify-center pt-5 pb-6">
@@ -277,7 +281,7 @@ const adminDashboard = () => {
                       </div>
 
                       <div className="w-48 text-center flex flex-col items-center justify-center p-2 bg-white  rounded-sm">
-                        <p className="pointer-none text-blue-600 ">
+                        <p className="pointer-none text-gray-600 ">
                           Upload Template
                         </p>
                       </div>
@@ -291,13 +295,13 @@ const adminDashboard = () => {
                     />
                   </label>
                 </div>
-                <div className="flex items-center justify-center rounded bg-blue-50 h-28 dark:bg-blue-800">
-                  <p className="text-2xl text-blue-400 dark:text-blue-500"></p>
+                <div className="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
+                  <p className="text-2xl text-gray-400 dark:text-gray-500"></p>
                 </div>
               </div>
-              <div className=" p-10 border-2 text-white rounded border-blue-700 bg-blue-50 h-96 w-96 dark:bg-blue-800">
+              <div className=" p-10 border-2 text-white rounded border-gray-700 bg-gray-50 h-96 w-96 dark:bg-gray-800">
                 <div>
-                  <div className="block max-w-sm p-1 bg-blue rounded-lg   dark:bg-blue-800 ">
+                  <div className="block max-w-sm p-1 bg-gray rounded-lg   dark:bg-gray-800 ">
                     <h5 className=" text-xl font-bold tracking-tight text-gray-900 dark:text-white">
                       Analytics
                     </h5>
@@ -305,11 +309,11 @@ const adminDashboard = () => {
                       Current User <span className="text-xl">- 1000</span>
                     </p>
                   </div>
-                  <hr className="h-px my-4 bg-blue-600 border-0  w-full" />
+                  <hr className="h-px my-4 bg-gray-600 border-0  w-full" />
                 </div>
 
                 <div>
-                  <div className="block max-w-sm p-1 bg-blue rounded-lg   dark:bg-blue-800 ">
+                  <div className="block max-w-sm p-1 bg-gray rounded-lg   dark:bg-gray-800 ">
                     <h5 className="font-bold tracking-tight text-gray-900 dark:text-white">
                       Summury
                     </h5>
@@ -320,31 +324,30 @@ const adminDashboard = () => {
                       <div class="col-end-7 col-span-2 ">03</div>
                     </div>
                   </div>
-                  <hr className="h-px my-4 bg-blue-600 border-0  w-full" />
+                  <hr className="h-px my-4 bg-gray-600 border-0  w-full" />
                 </div>
               </div>
-              <div className=" p-10 border-2  text-white rounded border-blue-700 bg-blue-50 h-64  w-64 dark:bg-blue-800">
-                <div className="block max-w-sm p-1 bg-blue rounded-lg   dark:bg-blue-800 ">
+              <div className=" p-10 border-2  text-white rounded border-gray-700 bg-gray-50 h-64  w-64 dark:bg-gray-800">
+                <div className="block max-w-sm p-1 bg-gray rounded-lg   dark:bg-gray-800 ">
                   <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   </p>
                   <h5 className=" text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    <a href="#" className=" underline text-blue-950">
+                    <a href="#" className=" underline text-gray-950">
                       Learn More
                     </a>
                   </h5>
                 </div>
               </div>
             </div>
-            <div className="flex items-center justify-center h-48 mb-4 rounded bg-blue-50 dark:bg-blue-800">
-              <p className="text-2xl text-blue-400 dark:text-blue-500">
-                Footer
-              </p>
-            </div>
+            
           </div>
+      </div>
+    </div>
+          
         </div>
-      </>
-    </>
+      </div>
+    </div>
   );
 };
 
