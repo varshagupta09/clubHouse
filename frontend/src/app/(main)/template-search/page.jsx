@@ -73,7 +73,7 @@ const templatesearch = () => {
 
     <div style={{ background: "#CADCFC" }} >
       
-      <div className="text-center p-10 ">
+      <div className="text-center p-10">
         <form className="max-w-lg mx-auto ">
           <label
             htmlFor="default-search"
