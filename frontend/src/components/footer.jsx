@@ -1,14 +1,14 @@
 export const Footer = () => {
   return (
-<footer className="bg-white dark:bg-gray-900">
+<footer className="bg-white dark:bg-gray-900" >
   <div className="container p-6 mx-auto">
     <div className="lg:flex">
       <div className="w-full -mx-6 lg:w-2/5">
         <div className="px-6">
           <a href="#">
             <img
-              className="w-auto h-7"
-              src="https://merakiui.com/images/full-logo.svg"
+              className="w-auto h-16"
+              src="/ReactUIHub_Logo.png"
               alt=""
             />
           </a>
@@ -132,21 +132,17 @@ export const Footer = () => {
           <div>
             <h3 className="text-gray-700 uppercase dark:text-white">Contact</h3>
             <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">
-              +1 526 654 8965
+              +91 956 654 8965
             </span>
             <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">
-              example@email.com
+              reactuihub@gmail.com
             </span>
           </div>
         </div>
       </div>
     </div>
     <hr className="h-px my-6 bg-gray-200 border-none dark:bg-gray-700" />
-    <div>
-      <p className="text-center text-gray-500 dark:text-gray-400">
-        © Brand 2020 - All rights reserved
-      </p>
-    </div>
+   
   </div>
 </footer>
 
