@@ -5,7 +5,7 @@ const adminDashboard = () => {
   return (
     <div>
       <nav
-        className="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700"
+        className="fixed top-0 z-50 w-full bg-white border-b  border-blue-400 "
         style={{ background: "#00246B" }}
       >
         <div className="px-3 py-3 lg:px-5 lg:pl-3">
@@ -160,10 +160,10 @@ const adminDashboard = () => {
           
             <div
               id="logo-sidebar"
-              className=" z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-red border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700"
+              className=" z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-red border-r  border-blue-400 sm:translate-x-0 dark:bg-gray-800 "
               aria-label="Sidebar"  
             >
-              <div className="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800" style={{background:"#00246B"}}>
+              <div className="h-full px-3 pb-4 overflow-y-auto bg-white " style={{background:"#00246B"}}>
                 <ul className="space-y-2 font-medium">
                   <li>
                     <a
@@ -265,15 +265,15 @@ const adminDashboard = () => {
               </div>
             </div>
           
-          <div style={{ width: "80%" }}>
-            <div className="p-4  mt-14 bg-red-700 ">
+         
+            <div className="p-4 w-full mt-14  border-blue-400" style={{background:"#00246B"}}>
               <div className="p-4 text-2xl font-semibold text-white ">
                 <h1>Admin Dashboard</h1>
               </div>
 
-              <div className="grid grid-cols-3 gap-20 bg-red-300 items-center  ">
-                <div className="flex items-center justify-center border-2  rounded border-red-700 bg-gray-50 h-96 w-96 dark:bg-gray-800">
-                  <div className=" flex items-center justify-center border-2 border-dashed border-gray-700 h-80 w-80">
+              <div className="grid grid-cols-3 gap-20  items-center p-3 " style={{background:"#CADCFC"}}>
+                <div className="flex items-center justify-center border-2  rounded border-blue-400 h-96 w-96 dark:bg-gray-800" style={{background:"#00246B"}}>
+                  <div className=" flex items-center justify-center border-2 border-dashed border-blue-400 h-80 w-80">
                     <label className="flex flex-col group text-center ">
                       {/* dfds */}
                       <div className="flex flex-col items-center justify-center pt-5 pb-6">
@@ -306,9 +306,9 @@ const adminDashboard = () => {
                     <p className="text-2xl text-gray-400 dark:text-gray-500"></p>
                   </div>
                 </div>
-                <div className=" p-10 border-2 text-white rounded border-gray-700 bg-gray-50 h-96 w-96 dark:bg-gray-800">
-                  <div>
-                    <div className="block max-w-sm p-1 bg-gray rounded-lg   dark:bg-gray-800 ">
+                <div className=" p-10 border-2 text-white rounded border-blue-400 bg-gray-50 h-96 w-96 dark:bg-gray-800 items-center justify-center " style={{background:"#00246B"}}>
+             
+                    <div className="block max-w-sm  " >
                       <h5 className=" text-xl font-bold tracking-tight text-gray-900 dark:text-white">
                         Analytics
                       </h5>
@@ -316,11 +316,11 @@ const adminDashboard = () => {
                         Current User <span className="text-xl">- 1000</span>
                       </p>
                     </div>
-                    <hr className="h-px my-4 bg-gray-600 border-0  w-full" />
-                  </div>
+                    <hr className="h-px my-4 bg-white border-0  w-full" />
+                 
 
-                  <div>
-                    <div className="block max-w-sm p-1 bg-gray rounded-lg   dark:bg-gray-800 ">
+                 
+                    <div className="block max-w-sm ">
                       <h5 className="font-bold tracking-tight text-gray-900 dark:text-white">
                         Summury
                       </h5>
@@ -331,16 +331,16 @@ const adminDashboard = () => {
                         <div class="col-end-7 col-span-2 ">03</div>
                       </div>
                     </div>
-                    <hr className="h-px my-4 bg-gray-600 border-0  w-full" />
-                  </div>
+                    <hr className="h-px my-4 bg-white border-0  w-full" />
+                  
                 </div>
-                <div className=" p-10 border-2  text-white rounded border-gray-700 bg-gray-50 h-64  w-64 dark:bg-gray-800">
-                  <div className="block max-w-sm p-1 bg-gray rounded-lg   dark:bg-gray-800 ">
+                <div className=" p-10 border-2  text-blue-900 rounded border-blue-400 bg-gray-50 h-64  w-64 dark:bg-gray-800" style={{background:"#00246B"}}>
+                  <div className="block max-w-sm p-1 rounded-lg text-white  " >
                     <p>
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     </p>
                     <h5 className=" text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                      <a href="#" className=" underline text-gray-950">
+                      <a href="#" className=" underline text-blue-700">
                         Learn More
                       </a>
                     </h5>
@@ -348,7 +348,7 @@ const adminDashboard = () => {
                 </div>
               </div>
             </div>
-          </div>
+          
         </div>
       </div>
     </div>
