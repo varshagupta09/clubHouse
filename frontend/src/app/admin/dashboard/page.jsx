@@ -3,9 +3,9 @@ import Link from "next/link";
 
 const adminDashboard = () => {
   return (
-    <div>
+  
       <div>
-        {/* <nav className="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+        <nav className="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
           <div className="px-3 py-3 lg:px-5 lg:pl-3">
             <div className="flex items-center justify-between">
               <div className="flex items-center justify-start rtl:justify-end">
@@ -32,7 +32,7 @@ const adminDashboard = () => {
                   </svg>
                 </button>
                 <a href="#" className="flex ms-2 md:me-24">
-                  <img src="" className="h-8 me-3" alt="FlowBite Logo" />
+                  <img src="/ReactUIHub_Logo.png" className="h-12 me-3" alt="FlowBite Logo" />
                   <span className="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">
                     ReactUIHub
                   </span>
@@ -147,7 +147,7 @@ const adminDashboard = () => {
               </div>
             </div>
           </div>
-        </nav> */}
+        </nav>
       
         <div className=" w-full bg-gray-700 ">
         <div style={{ display: 'flex', width: '100%' }}>
@@ -259,13 +259,13 @@ const adminDashboard = () => {
           </div>
         </div>      </div>
       <div style={{ width: '80%'}}>
-      <div className="p-4  mt-14 ">
+      <div className="p-4  mt-14 bg-red-700 ">
             <div className="p-4 text-2xl font-semibold text-white ">
               <h1>Admin Dashboard</h1>
             </div>
 
-            <div className="grid grid-cols-3 gap-20 mb-4 items-center  ">
-              <div className="flex items-center justify-center border-2  rounded border-gray-700 bg-gray-50 h-96 w-96 dark:bg-gray-800">
+            <div className="grid grid-cols-3 gap-20 bg-red-300 items-center  ">
+              <div className="flex items-center justify-center border-2  rounded border-red-700 bg-gray-50 h-96 w-96 dark:bg-gray-800">
                 <div className=" flex items-center justify-center border-2 border-dashed border-gray-700 h-80 w-80">
                   <label className="flex flex-col group text-center ">
                     {/* dfds */}
@@ -347,7 +347,7 @@ const adminDashboard = () => {
           
         </div>
       </div>
-    </div>
+  
   );
 };
 

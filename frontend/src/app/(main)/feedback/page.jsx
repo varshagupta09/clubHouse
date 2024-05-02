@@ -10,9 +10,7 @@ const AdminProfile = () => {
       {/* component */}
       <section>
         <div className="bg-blue-600 text-white pb-20 pt-11">
-          <p className="ml-6 text-yellow-300 text-4xl font-semibold uppercase tracking-loose">
-            REVIEW
-          </p>
+         
           <div className="container mx-auto flex flex-col md:flex-row my md:my">
             <div className="flex flex-col w-full lg:w-1/3 p-8">
               {/* <p className="text-3xl text-black md:text-5xl my-4 leading-relaxed md:leading-snug">

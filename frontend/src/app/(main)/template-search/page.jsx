@@ -69,24 +69,9 @@ const templatesearch = () => {
 
   return (
     <>
-      <aside
-        id="logo-sidebar"
-        className="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
-        aria-label="Sidebar"
-      >
-        <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
-          <a href="https://flowbite.com/" className="flex items-center ps-2.5 mb-5">
-            <img
-              src="https://flowbite.com/docs/images/logo.svg"
-              className="h-6 me-3 sm:h-7"
-              alt="Flowbite Logo"
-            />
-            <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
-              Flowbite
-            </span>
-          </a>
-        </div>
-      </aside>
+
+    <div></div>
+      
       <div className="text-center p-10">
         <form className="max-w-lg mx-auto ">
           <label
@@ -135,9 +120,7 @@ const templatesearch = () => {
       >
         {displayTemplates()}
       </section>
-      <div className="text-center py-10 px-10">
-
-      </div>
+  
     </>
   );
 };

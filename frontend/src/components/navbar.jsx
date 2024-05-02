@@ -4,15 +4,15 @@ import React from "react";
 const Navbar = () => {
   return (
     <nav className="bg-white border-gray-200 w-screen dark:bg-gray-900">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
         <a href="#" className="flex items-center">
           <img
-            src="https://flowbite.com/docs/images/logo.svg"
-            className="h-8 mr-3"
-            alt="Flowbite Logo"
+            src="/ReactUIHub_Logo.png"
+            className="h-16 mr-3"
+            alt="ReactUIHub Logo"
           />
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-            React UI Hub
+            ReactUIHub
           </span>
         </a>
         <div className="flex md:order-2">
@@ -127,7 +127,9 @@ const Navbar = () => {
                 className="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
                 aria-current="page"
               >
-                Home
+
+                <Link href={"/"}>Home</Link>
+                
               </a>
             </li>
             <li>
