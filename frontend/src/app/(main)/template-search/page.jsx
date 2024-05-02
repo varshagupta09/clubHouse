@@ -52,9 +52,10 @@ const templatesearch = () => {
               <p className="text-lg font-bold text-black truncate block capitalize">
                 {template.title}
               </p>
-              <div className="flex items-center">
-                <div className="ml-auto">
-                  <Link href={'/templateview/' + template._id} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+              <div className="flex items-center ">
+                <div className="ml-auto pt-5 ">
+                
+                  <Link href={'/templateview/' + template._id} className="bg-blue-500 rounded-md hover:bg-blue-700 text-white font-bold py-2 px-4 roundeds">
                     View Details
                   </Link>
                 </div>
@@ -70,9 +71,9 @@ const templatesearch = () => {
   return (
     <>
 
-    <div></div>
+    <div style={{ background: "#CADCFC" }} >
       
-      <div className="text-center p-10">
+      <div className="text-center p-10 ">
         <form className="max-w-lg mx-auto ">
           <label
             htmlFor="default-search"
@@ -101,7 +102,7 @@ const templatesearch = () => {
             <input
               type="search"
               id="default-search"
-              className="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-blue-50 focus:ring-blue-500 focus:border-blue-500  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Search templates..."
               onChange={searchTemplate}
             />
@@ -116,11 +117,11 @@ const templatesearch = () => {
       </div>
       <section
         id="Projects"
-        className="w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5"
+        className="w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 pb-20"
       >
         {displayTemplates()}
       </section>
-  
+      </div>
     </>
   );
 };
