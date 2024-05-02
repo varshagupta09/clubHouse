@@ -11,7 +11,7 @@ const templateManagement = () => {
   const fetchTemplates = () => {
     fetch(`${process.env.NEXT_PUBLIC_API_URL}/template/getall`)
       .then((response) => {
-        return response.json();
+        return response.json()
       })
       .then(data => {
         console.log(data);
