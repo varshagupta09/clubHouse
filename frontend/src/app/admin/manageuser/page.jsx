@@ -14,23 +14,28 @@ const ManageUser = () => {
               <thead>
                 <tr className="text-center bg-primary">
                   <th className="w-1/6 min-w-[160px] border-l border-transparent py-4 px-3 text-lg font-medium text-white lg:py-7 lg:px-4">
-                    TLD
+                    User ID
                   </th>
                   <th className="w-1/6 min-w-[160px] py-4 px-3 text-lg font-medium text-white lg:py-7 lg:px-4">
-                    Duration
+                    User Name
                   </th>
+                  <th className="w-1/6 min-w-[160px] py-4 px-3 text-lg font-medium text-white lg:py-7 lg:px-4">
+                    Email Id
+                  </th>
+                  <th className="w-1/6 min-w-[160px] py-4 px-3 text-lg font-medium text-white lg:py-7 lg:px-4">
+                    Password
+                  </th>
+                 
                   <th className="w-1/6 min-w-[160px] py-4 px-3 text-lg font-medium text-white lg:py-7 lg:px-4">
                     Registration
                   </th>
                   <th className="w-1/6 min-w-[160px] py-4 px-3 text-lg font-medium text-white lg:py-7 lg:px-4">
-                    Renewal
-                  </th>
-                  <th className="w-1/6 min-w-[160px] py-4 px-3 text-lg font-medium text-white lg:py-7 lg:px-4">
-                    Transfer
+                    Date & Time
                   </th>
                   <th className="w-1/6 min-w-[160px] border-r border-transparent py-4 px-3 text-lg font-medium text-white lg:py-7 lg:px-4">
                     Register
                   </th>
+                  
                 </tr>
               </thead>
               <tbody>
@@ -57,6 +62,7 @@ const ManageUser = () => {
                     >
                       Sign Up
                     </a>
+                    
                   </td>
                 </tr>
                 <tr>
