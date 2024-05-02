@@ -48,7 +48,7 @@ const templateManagement = () => {
     if (templateList.length === 0) {
       return <h2>No templates found</h2>
     } else {
-      return templateList.map(template => (
+      return templateList.map((template) => {
         <li className="py-3 sm:py-4">
           <div className="grid grid-cols-5 gap-4 items-center ">
             <div className="flex-shrink-0">
@@ -83,13 +83,13 @@ const templateManagement = () => {
             </div>
           </div>
         </li>
-      ))
+      })
     }
   }
 
   return (
     <>
-      <nav className="fixed top-0 z-50 w-full bg-white border-b border-blue-200 dark:bg-blue-800 dark:border-blue-700">
+      <nav className="fixed top-0 z-50 w-full border-b border-blue-400 " style={{background:"#00246B"}}>
         <div className="px-3 py-3 lg:px-5 lg:pl-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center justify-start rtl:justify-end">
@@ -116,7 +116,7 @@ const templateManagement = () => {
                 </svg>
               </button>
               <a href="#" className="flex ms-2 md:me-24">
-                <img src="" className="h-8 me-3" alt="FlowBite Logo" />
+                <img src="/ReactUIHub_Logo.png" className="h-14 me-3" alt="FlowBite Logo" />
                 <span className="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">
                   ReactUIHub
                 </span>
@@ -146,7 +146,7 @@ const templateManagement = () => {
                   <input
                     type="search"
                     id="default-search"
-                    className="block w-full p-2 ps-8 text-sm text-blue-900 border border-blue-300 rounded-lg bg-blue-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-blue-700 dark:border-blue-600 dark:placeholder-blue-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    className="block w-full p-2 ps-8 text-sm text-blue-100 border border-blue-300 rounded-lg bg-blue-500 focus:ring-blue-500 focus:border-blue-500 dark:bg-blue-900 dark:border-blue-600 dark:placeholder-blue-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="Search Templates..."
                     required=""
                   />
@@ -234,11 +234,11 @@ const templateManagement = () => {
       </nav>
       <aside
         id="logo-sidebar"
-        className="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-blue-200 sm:translate-x-0 dark:bg-blue-800 dark:border-blue-700"
+        className="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-blue-100 border-r border-blue-400 sm:translate-x-0" 
         aria-label="Sidebar"
       >
-        <div className="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-blue-800">
-          <ul className="space-y-2 font-medium">
+        <div className="h-full px-3 pb-4 overflow-y-auto  " style={{background:"#00246B"}}>
+          <ul className="space-y-2 font-medium ">
             <li>
               <a
                 href="#"
@@ -256,7 +256,7 @@ const templateManagement = () => {
                 </svg>
 
                 <Link href="/admin/dashboard">
-                  <span className="ms-3">Dashboard</span>
+                  <span className="ms-3 ">Dashboard</span>
 
                 </Link>
               </a>
@@ -337,9 +337,9 @@ const templateManagement = () => {
           </ul>
         </div>
       </aside>
-      <div className="p-4 sm:ml-64 bg-blue-950">
+      <div className="p-4 sm:ml-64 " style={{background:"#CADCFC"}}>
         <div className="p-4  mt-14 ">
-          <div className="p-4 text-2xl font-semibold text-white ">
+          <div className="p-4 text-2xl font-semibold  " style={{color:"#00246B"}}>
             <div>
               <h1>Template Management</h1>
             </div>
@@ -359,7 +359,7 @@ const templateManagement = () => {
             </div>
           </div> */}
 
-          <div className="w-full p-4 bg-blu border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+          <div className="w-full p-4 bg-blu border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700" style={{background:"#00246B"}}>
             <div className="flex items-center justify-start gap-4 mb-4">
               <a
                 href="#"
@@ -434,6 +434,7 @@ const templateManagement = () => {
               </ul>
             </div>
           </div>
+          
           {/* dsvds */}
         </div>
       </div>
