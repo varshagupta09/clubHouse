@@ -8,7 +8,7 @@ const mySchema = new Schema({
    category:String,
    framework:String,
    purpose:String,
-   descripton: String,
+   description: String,
    feature:String,
    createdAt: {
        type: Date,
