@@ -16,3 +16,7 @@ The frontend is built with React. It allows users to browse, preview, and downlo
 
 ## Project Structure
 
+## Authors
+
+- [Varsha](https://github.com/varsha) - Backend Developer
+- [Rohit](https://github.com/rohit) - Frontend Developer
