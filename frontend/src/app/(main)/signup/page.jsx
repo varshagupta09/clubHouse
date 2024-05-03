@@ -59,18 +59,23 @@ const Signup = () => {
 
   return (
     <>
-      <div className="flex fle-col items-center justify-center min-h-screen py-2 bg-gray-100">
+      <div className="flex fle-col items-center justify-center min-h-screen py-2 " style={{ background: "#CADCFC" }}>
         <div className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-          <div className="bg-white rounded-2xl shadow-2xl flex w-2/3 max-w-4xl">
+          <div className=" rounded-2xl shadow-2xl flex w-2/3 max-w-4xl">
+              {/* image */}
+              <div className="w-1/2 text-white rounded-tr-2xl rounded-br-2xl py-36 px-12 > ">
+              <img src="/Untitled design.gif" alt="" className="h-fit w-fit" />
+            </div>
             {/* form */}
-            <div className="w-1/2 p-5 ">
-              <div className="text-left font bold">ReactUIHub</div>
+            
+            <div className="w-1/2 p-5  justify-center items-center ">
+              
 
-              <div className="py-10 ">
-                <h2 className="text-3xl font-bold text-cyan-950 mb-2">
+              <div className="pt-20 my-auto ">
+                <h2 className="text-3xl font-bold mb-2" style={{color:"#00246B"}}>
                   Sign In Account
                 </h2>
-                <div className="border-2 w-10 border-cyan-950 inline-block mb-2"></div>
+                <div className=" w-10  inline-block mb-2" style={{border:"2px solid #00246B"}}></div>
                 {/* Social Icons */}
                 <div className="flex justify-center my-2">
                   <a
@@ -152,14 +157,13 @@ const Signup = () => {
                 </div>
                 <a
                   href="#"
-                  className="border-2 border-cyan-950 text-cyan-950 rounded-full  py-2 px-12 inline-block font-semibold hover:bg-cyan-950 hover:text-white "
+                  className="border-2 border-cyan-950 text-blue-950 rounded-full  py-2 px-12 inline-block font-semibold hover:bg-blue-950 hover:text-white " 
                 >
                   Sign Up
                 </a>
               </div>
             </div>
-            {/* image */}
-            <div className="w-1/2 bg-cyan-950 text-white rounded-tr-2xl rounded-br-2xl py-36 px-12> "></div>
+          
           </div>
         </div>
       </div>

@@ -66,14 +66,14 @@ const Login = () => {
 
   return (
     <>
-      <div className="flex fle-col items-center justify-center min-h-screen py-2 bg-gray-100">
+      <div className="flex fle-col items-center justify-center min-h-screen py-2 " style={{ background: "#CADCFC" }}>
         <div className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
           <div className="bg-white rounded-2xl shadow-2xl flex max-w-4xl">
             {/* form */}
             <form onSubmit={loginForm.handleSubmit}>
               <div className="p-10">
-                <h2 className="text-3xl font-bold text-cyan-950 mb-2">LOGIN</h2>
-                <div className="border-2 w-10 border-cyan-950 inline-block mb-2"></div>
+                <h2 className="text-3xl font-bold mb-2" style={{color:"#00246B"}}>LOGIN</h2>
+                <div className="border-2 w-10 border-cyan-950 inline-block mb-2" style={{border:"2px solid #00246B"}}></div>
                 {/* Social Icons */}
                 <div className="flex justify-center my-2">
                   <a
@@ -140,7 +140,7 @@ const Login = () => {
                 </div>
                 <button
                   type="submit"
-                  className="border-2 border-cyan-950 text-cyan-950 rounded-full  py-2 px-12 inline-block font-semibold hover:bg-cyan-950 hover:text-white "
+                  className="border-2 border-blue-950 text-blue-950 rounded-full  py-2 px-12 inline-block font-semibold hover:bg-blue-950 hover:text-white "
                 >
                   Login
                 </button>
