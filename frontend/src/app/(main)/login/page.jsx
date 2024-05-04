@@ -75,28 +75,28 @@ const Login = () => {
                 <h2 className="text-3xl font-bold mb-2" style={{color:"#00246B"}}>LOGIN</h2>
                 <div className="border-2 w-10 border-cyan-950 inline-block mb-2" style={{border:"2px solid #00246B"}}></div>
                 {/* Social Icons */}
-                <div className="flex justify-center my-2">
+                 <div className="flex justify-center my-2">
                   <a
                     href="#"
                     className="border-2 border-gray-200 rounded-full p-3 mx-1"
                   >
-                    <FaFacebookF className="text-sm" />
+                    <FaFacebookF className="text-sm text-blue-700" />
                   </a>
                   <a
                     href="#"
                     className="border-2 border-gray-200 rounded-full p-3 mx-1"
                   >
-                    <FaLinkedinIn className="text-sm" />
+                    <FaLinkedinIn className="text-sm text-blue-700" />
                   </a>
                   <a
                     href="#"
                     className="border-2 border-gray-200 rounded-full p-3 mx-1"
                   >
-                    <FaGoogle className="text-sm" />
+                    <FaGoogle className="text-sm text-blue-700" />
                   </a>
                 </div>
 
-                <p className="text-gray-400 my-3">or use your email account</p>
+                <p className="text-blue-500 my-3">or use your email account</p>
 
                 <div className="flex flex-col items-center  ">
                   <div className="bg-gray-100 w-64 p-2 flex items-center mb-2">
@@ -125,15 +125,15 @@ const Login = () => {
                     />
                   </div>
                   <div className="flex justify-between w-64 mb-5">
-                    <lable className="flex items-center text-xs">
+                    <lable className="flex items-center text-xs text-blue-500">
                       <input
                         type="checkbox"
                         name="remember"
-                        className=" mr-1 bg-white"
+                        className=" mr-1 bg-white "
                       />{" "}
                       Remember me
                     </lable>
-                    <a href="#" className="text-xs ">
+                    <a href="#" className="text-xs text-blue-500 ">
                       Forgot Password?
                     </a>
                   </div>

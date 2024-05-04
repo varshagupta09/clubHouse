@@ -3,7 +3,7 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <nav className=" border-gray-200 w-screen" style={{background:"#00246B"}}>
+    <nav className=" bg-gray-300 border-b border-gray-400 w-screen" >
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
         <a href="#" className="flex items-center">
           <img
@@ -11,7 +11,7 @@ const Navbar = () => {
             className="h-16 mr-3"
             alt="ReactUIHub Logo"
           />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+          <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">
             ReactUIHub
           </span>
         </a>

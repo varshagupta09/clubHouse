@@ -108,27 +108,28 @@ const templateview = () => {
           </button>
         </div>
       );
-    } else return <h3>Please Login to leave review</h3>;
+    } else return <h3 className="text-white">Please Login to leave review</h3>;
   };
 
   const displayReviews = () => {
     return (
-      <section className="text-gray-600 body-font">
+      <section className="text-white body-font">
         <div className="container px-5 py-24 mx-auto">
           {reviewList.map((review) => (
             <div className="py-8 px-4 lg:w-1/3">
               <div className="h-full flex items-start">
                 <div className="w-12 flex-shrink-0 flex flex-col text-center leading-none">
-                  <span className="text-gray-500 pb-2 mb-2 border-b-2 border-gray-200">
+                  <span className="text-white pb-2 mb-2 border-b-2 border-gray-200">
                     {new Date(review.createdAt).getMonth()}
                   </span>
-                  <span className="font-medium text-lg text-gray-800 title-font leading-none">
+                  <span className="font-medium text-lg text-white title-font leading-none">
                     {new Date(review.createdAt).getDate()}
                   </span>
                 </div>
                 <div className="flex-grow pl-6">
                   <h2 className="tracking-widest text-xs title-font font-medium text-indigo-500 mb-1">
                     {/* {review.user.name} */}
+                    username
                   </h2>
                   <div className="flex">
                     <img src={staricon} alt="" />
