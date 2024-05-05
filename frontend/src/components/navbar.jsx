@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <nav className=" bg-gray-600 border-b border-gray-800 w-screen" >
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
-        <a href="#" className="flex items-center">
+        <Link href="/" className="flex items-center">
           <img
             src="/ReactUIHub_Logo.png"
             className="h-16 mr-3"
@@ -14,7 +14,7 @@ const Navbar = () => {
           <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">
             ReactUIHub
           </span>
-        </a>
+        </Link>
         <div className="flex md:order-2">
           <button
             type="button"

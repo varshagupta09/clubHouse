@@ -50,10 +50,14 @@ const Login = () => {
                 setLoggedIn(true);
                 sessionStorage.setItem("user", JSON.stringify(data));
                 resetForm();
-                router.push("/");
+                if (data.role === "admin") {
+                  router.push("/admin/add-template");
+                } else {
+                  router.push("/");
+                }
               })
-          }else{
-             toast.error("Login Failed");
+          } else {
+            toast.error("Login Failed");
           }
         })
         .catch((err) => {
@@ -72,10 +76,10 @@ const Login = () => {
             {/* form */}
             <form onSubmit={loginForm.handleSubmit}>
               <div className="p-10">
-                <h2 className="text-3xl font-bold mb-2" style={{color:"#00246B"}}>LOGIN</h2>
-                <div className="border-2 w-10 border-cyan-950 inline-block mb-2" style={{border:"2px solid #00246B"}}></div>
+                <h2 className="text-3xl font-bold mb-2" style={{ color: "#00246B" }}>LOGIN</h2>
+                <div className="border-2 w-10 border-cyan-950 inline-block mb-2" style={{ border: "2px solid #00246B" }}></div>
                 {/* Social Icons */}
-                 <div className="flex justify-center my-2">
+                <div className="flex justify-center my-2">
                   <a
                     href="#"
                     className="border-2 border-gray-200 rounded-full p-3 mx-1"
