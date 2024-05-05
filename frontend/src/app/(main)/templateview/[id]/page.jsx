@@ -6,6 +6,7 @@ import toast from "react-hot-toast";
 import StarRatings from "react-star-ratings";
 import staricon from "./star.svg";
 import Navbar from "@/components/navbar";
+import Link from "next/link";
 
 const templateview = () => {
   const { id } = useParams();
@@ -108,26 +109,24 @@ const templateview = () => {
           </button>
         </div>
       );
-    } else return <h3 className="text-white">Please Login to leave review</h3>;
+    } else return <h3 className="text-gray-700">Please <span className="text-gray-700 hover:text-blue-700 hover:underline">  <Link href={"/login"}>Login</Link> </span> to leave review</h3>;
   };
 
   const displayReviews = () => {
     return (
+      
+
+      <>
+
+
       <section className="text-white body-font">
-        <div className="container px-5 py-24 mx-auto">
+        <div className="container  py-8 mx-auto">
           {reviewList.map((review) => (
-            <div className="py-8 px-4 lg:w-1/3">
-              <div className="h-full flex items-start">
-                <div className="w-12 flex-shrink-0 flex flex-col text-center leading-none">
-                  <span className="text-white pb-2 mb-2 border-b-2 border-gray-200">
-                    {new Date(review.createdAt).getMonth()}
-                  </span>
-                  <span className="font-medium text-lg text-white title-font leading-none">
-                    {new Date(review.createdAt).getDate()}
-                  </span>
-                </div>
-                <div className="flex-grow pl-6">
-                  <h2 className="tracking-widest text-xs title-font font-medium text-indigo-500 mb-1">
+            <div className="py-4 px-4   ">
+              <div className=" flex items-start bg-gray-100 rounded-sm ">
+              
+                <div className="flex-grow p-5  ">
+                  <h2 className="tracking-widest text-md title-font font-medium text-gray-500 mb-1">
                     {/* {review.user.name} */}
                     username
                   </h2>
@@ -138,20 +137,31 @@ const templateview = () => {
                     <img src={staricon} alt="" />
                     <img src={staricon} alt="" />
                   </div>
-                  <p className="leading-relaxed mb-5">{review.review}</p>
+                  <p className="leading-relaxed mb-5 text-gray-900">{review.review}</p>
+                </div>
+                <div className="flex flex-col text-center text-gray-900 leading-none p-5">
+                  
+                  <span className="font-medium text-lg text-gray-900title-font leading-none w-full">
+                  {new Date(review.createdAt).toISOString().split('T')[0]}
+
+                  </span>
                 </div>
               </div>
             </div>
           ))}
         </div>
       </section>
+     
+    
+
+      </>
     );
   };
 
   const displayTemplate = () => {
     if (templateDetails !== null) {
       return (
-        <div className="font-[sans-serif]">
+        <div className="font-[sans-serif] bg-gray-50">
           <div className="p-10 lg:max-w-full max-w-2xl max-lg:mx-auto items-center">
             <div className="grid  grid-cols-1 lg:grid-cols-2 gap-10 p-5   ">
               <div className="w-full lg:sticky top-0 ">
@@ -164,10 +174,10 @@ const templateview = () => {
                 </div>
                 <div className="mt-8">
                   <div>
-                    <h2 className="text-3xl font-extrabold text-white">
+                    <h2 className="text-3xl font-extrabold text-gray-900">
                       {templateDetails.title}
                     </h2>
-                    <p className="text-sm text-white mt-2">
+                    <p className="text-sm text-gray-900 mt-2">
                       {templateDetails.category}
                     </p>
                   </div>
@@ -191,7 +201,7 @@ const templateview = () => {
                   <div className="flex flex-wrap gap-4">
                     <button
                       type="button"
-                      className=" px-4 py-2.5 border border-white bg-transparent text-white text-sm font-bold rounded"
+                      className=" px-4 py-2.5 border border-gray-200 bg-transparent text-gray-900 text-sm font-bold rounded"
                     >
                       Download
                     </button>
@@ -222,7 +232,7 @@ const templateview = () => {
                 {selSection === "description" ? (
                   <div>
                     <div className="mt-8">
-                      <h3 className="text-lg font-bold text-white">
+                      <h3 className="text-lg font-bold text-gray-900">
                         Product Description
                       </h3>
                       <p className="text-sm text-gray-400 mt-4">
@@ -233,7 +243,7 @@ const templateview = () => {
                 ) : (
                   <div>
                     <div className="mt-8">
-                      <h3 className="text-lg font-bold text-white">Reviews</h3>
+                      <h3 className="text-lg font-bold text-gray-900">Reviews</h3>
 
                       {ratingForm()}
 

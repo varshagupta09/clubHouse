@@ -93,7 +93,7 @@ const templateManagement = () => {
   return (
     <>
     <div className="bg-gray-50">
-      <nav className="fixed top-0 z-50 w-full bg-gray-300 border-b border-gray-400">
+      <nav className="fixed top-0 z-50 w-full bg-gray-600 border-b border-gray-800">
         <div className="px-3 py-3 lg:px-5 lg:pl-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center justify-start rtl:justify-end">
@@ -362,31 +362,31 @@ const templateManagement = () => {
             <div className="flex items-center justify-start gap-4 mb-4">
               <a
                 href="#"
-                className="text-sm font-medium text-gray-300 hover:underline d"
+                className="text-sm font-medium text-gray-400 hover:underline hover:text-gray-900 "
               >
                 React Native
               </a>
               <a
                 href="#"
-                className="text-sm font-medium text-gray-300 hover:underline "
+                className="text-sm font-medium text-gray-400 hover:underline hover:text-gray-900"
               >
                 Next.js
               </a>
               <a
                 href="#"
-                className="text-sm font-medium text-gray-300 hover:underline "
+                className="text-sm font-medium text-gray-400 hover:underline hover:text-gray-900"
               >
                 Gatsby
               </a>
               <a
                 href="#"
-                className="text-sm font-medium text-gray-300 hover:underline "
+                className="text-sm font-medium text-gray-400 hover:underline hover:text-gray-900"
               >
                 Remix
               </a>
               <a
                 href="#"
-                className="text-sm font-medium text-gray-300 hover:underline "
+                className="text-sm font-medium text-gray-400 hover:underline hover:text-gray-900 "
               >
                 Vite
               </a>
