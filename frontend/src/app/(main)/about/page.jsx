@@ -147,8 +147,7 @@ const AboutUsPage = () => {
             <div className="max-w-xl mb-6 mt-5">
               <h2 className="mb-4 text-lg font-bold tracking-widest  text-gray-800 mt-5">
                 Vision for the Future:
-              </h2>
-
+              </h2>              
               <p className="text-base text-gray-600 tracking-wide ">
                 Our vision for ReactUIHub is to become the premier platform for
                 React developers worldwide, offering innovative tools,
@@ -163,6 +162,13 @@ const AboutUsPage = () => {
             <img
               className="object-cover w-full h-56 rounded shadow-lg sm:h-96"
               src="/aboutus.png"
+              alt=""
+            />
+          </div>
+          <div className=" items-center justify-center">
+            <img
+              className="object-cover w-full h-56 rounded shadow-lg sm:h-96"
+              src="/aboutus1.png"
               alt=""
             />
           </div>
