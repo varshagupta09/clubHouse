@@ -15,7 +15,7 @@ export const Footer = () => {
                   src="/ReactUIHub_Logo.png"
                   alt="ReactUIHub"
                 />
-                <span className="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">
+                <span className="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap text-white">
                   ReactUIHub
                 </span>
               </a>
@@ -27,7 +27,7 @@ export const Footer = () => {
               <div className="flex mt-6 -mx-2  pl-5">
                 <a
                   href="#"
-                  className="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
+                  className="mx-2  transition-colors duration-300 text-gray-300  hover:text-blue-400"
                   aria-label="Reddit"
                 >
                   <svg
@@ -41,7 +41,7 @@ export const Footer = () => {
                 </a>
                 <a
                   href="#"
-                  className="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
+                  className="mx-2  transition-colors duration-300 text-gray-300 hover:text-blue-400"
                   aria-label="Facebook"
                 >
                   <svg
@@ -55,7 +55,7 @@ export const Footer = () => {
                 </a>
                 <a
                   href="#"
-                  className="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
+                  className="mx-2 transition-colors duration-300 text-gray-300 hover:text-blue-400"
                   aria-label="Github"
                 >
                   <svg
@@ -73,79 +73,79 @@ export const Footer = () => {
           <div className="mt-6 lg:mt-0 lg:flex-1">
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
               <div>
-                <h3 className="text-gray-700 uppercase dark:text-white">
+                <h3 className=" uppercase text-white">
                   About
                 </h3>
                 <a
                   href="#"
-                  className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                  className="block mt-2 text-sm  text-gray-400 hover:underline"
                 >
                   Company
                 </a>
                 <a
                   href="#"
-                  className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                  className="block mt-2 text-sm  text-gray-400 hover:underline"
                 >
                   community
                 </a>
                 <a
                   href="#"
-                  className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                  className="block mt-2 text-sm  text-gray-400 hover:underline"
                 >
                   Careers
                 </a>
               </div>
               <div>
-                <h3 className="text-gray-700 uppercase dark:text-white">
+                <h3 className=" uppercase text-white">
                   Blog
                 </h3>
                 <a
                   href="#"
-                  className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                  className="block mt-2 text-sm  text-gray-400 hover:underline"
                 >
                   Tec
                 </a>
                 <a
                   href="#"
-                  className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                  className="block mt-2 text-sm  text-gray-400 hover:underline"
                 >
                   Music
                 </a>
                 <a
                   href="#"
-                  className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                  className="block mt-2 text-sm  text-gray-400 hover:underline"
                 >
                   Videos
                 </a>
               </div>
               <div>
-                <h3 className="text-gray-700 uppercase dark:text-white">
+                <h3 className=" uppercase text-white">
 
                   <Link href={"/terms-and-conditions"}> Terms of Service</Link>
                
                 </h3>
                 <a
                   href="#"
-                  className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                  className="block mt-2 text-sm  text-gray-400 hover:underline"
                 >
 Terms and Conditions                </a>
              
               </div>
               <div>
-                <h3 className="text-gray-700 uppercase dark:text-white">
+                <h3 className=" uppercase text-white">
                   Contact
                 </h3>
-                <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">
+                <span className="block mt-2 text-sm  text-gray-400 hover:underline">
                   +91 956 654 8965
                 </span>
-                <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">
+                <span className="block mt-2 text-sm  text-gray-400 hover:underline">
                   reactuihub@gmail.com
                 </span>
               </div>
             </div>
           </div>
         </div>
-        <hr className="h-px my-6 bg-gray-200 border-none dark:bg-gray-700" />
+        <hr className="h-px my-6  border-none bg-gray-700" />
       </div>
     </footer>
   );
