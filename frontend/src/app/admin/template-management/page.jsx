@@ -67,23 +67,23 @@ const templateManagement = () => {
             </div>
 
             <div className="flex-1 min-w-0 ms-4">
-              <p className="text-sm font-medium text-gray-900  dark:text-white">
+              <p className="text-sm font-medium text-gray-900 ">
                 {template.title}
               </p>
             </div>
             <div className="flex-1 min-w-0 ms-4">
-              <p className="text-sm  text-gray-900  dark:text-white">
+              <p className="text-sm  text-gray-900  ">
                 {template.category}
               </p>
             </div>
             <div className=" min-w-0 ms-4">
-              <p className="text-sm  text-gray-900  dark:text-white">
+              <p className="text-sm  text-gray-900  ">
                 {template.framework}
               </p>
             </div>
 
             <div className="min-w-0 ms-4">
-              <p className="text-sm  text-gray-900  dark:text-white">
+              <p className="text-sm  text-gray-900  ">
                 <IconTrash
                   size={24}
                   color="red"
@@ -102,11 +102,11 @@ const templateManagement = () => {
     <>
       <div className="bg-gray-50">
 
-        <div className="p-4 w-full mt-14 bg-gray-50">
-          <div className="p-4  mt-14 ">
-            <div className="p-4 text-2xl font-semibold text-gray-700 ">
+        <div className="p-4 w-full h-screen bg-gray-800">
+        <div className="p-4 text-2xl font-semibold text-white  ">
               <h1>Template Management</h1>
             </div>
+
             <div className="w-full p-4 bg-gray-100 border border-gray-200 rounded-lg shadow sm:p-8">
               <div className="flex items-center justify-start gap-4 mb-4">
                 <a
@@ -124,18 +124,22 @@ const templateManagement = () => {
                   Next.js
                 </a>
                 <a
+                                  onClick={() => searchCategory('Gastsby')}
+
                   href="#"
                   className="text-sm font-medium text-gray-400 hover:underline hover:text-gray-900"
                 >
                   Gatsby
                 </a>
                 <a
+                onClick={() => searchCategory('Remix')}
                   href="#"
                   className="text-sm font-medium text-gray-400 hover:underline hover:text-gray-900"
                 >
                   Remix
                 </a>
                 <a
+                                onClick={() => searchCategory('Vite')}
                   href="#"
                   className="text-sm font-medium text-gray-400 hover:underline hover:text-gray-900 "
                 >
@@ -157,17 +161,17 @@ const templateManagement = () => {
 
                       <div className="flex-1 min-w-0 ms-4">
                         <p className="text-sm font-medium text-gray-900 ">
-                          Edit
+                          Title Name
                         </p>
                       </div>
                       <div className="flex-1 min-w-0 ms-4">
                         <p className="text-sm font-medium text-gray-900  ">
-                          Visibility
+                          Category
                         </p>
                       </div>
                       <div className="flex-1 min-w-0 ms-4">
                         <p className="text-sm font-medium text-gray-900  ">
-                          Analytics
+                          Framwork
                         </p>
                       </div>
 
@@ -182,7 +186,7 @@ const templateManagement = () => {
                 </ul>
               </div>
             </div>
-          </div>
+          
         </div>
       </div>
     </>

@@ -92,14 +92,14 @@ const addTemplate = () => {
 
   return (
     <div>
-      <div className=" w-full p-10 " style={{ background: "#CADCFC" }}>
-        <div className="text-center justify-center p-5 ">
-          <h2 className="text-3xl font-bold text-gray-900">Template Upload!</h2>
-          
-        </div>
+      <div className=" w-full px-10 bg-gray-800 " >
+     
+        <div className="p-4 text-2xl font-semibold text-white  ">
+              <h1>Template Upload!</h1>
+            </div>
         <div>
           <form
-            className="mt-8 space-y-3 p-5"
+            className="p-4 space-y-3  bg-gray-50 rounded-md"
             onSubmit={addtemplateForm.handleSubmit}
           >
             <div className="grid grid-cols-2 ">

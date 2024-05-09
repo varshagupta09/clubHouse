@@ -34,15 +34,20 @@ export default function TypewriterEffectSmoothDemo() {
         Discover, customize, and integrate stunning React templates for your projects.        </p>
         <TypewriterEffectSmooth words={words} />
         <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-4">
-          <button className="w-40 h-10 rounded-xl bg-black border dark:border-white border-transparent text-white text-sm">
+          <button className="w-40 h-10 rounded-xl bg-black border border-white hover:bg-white hover:border-black hover:text-black text-white text-sm">
           <Link href={"/template-search"}> Get Started</Link>
           </button>
-          <button className="w-40 h-10 rounded-xl bg-white text-black border dark:border-black border-transparent text-sm">
+          <button className="w-40 h-10 rounded-xl bg-white text-black border border-black hover:bg-black hover:border-white hover:text-white text-sm">
 
             <Link href={"/signup"}>Sign Up</Link>
             
           </button>
         </div>
+      </div>
+
+      <div className="bg-gray-400">
+
+        bjbjhb
       </div>
      
       <Footer />

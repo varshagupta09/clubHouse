@@ -1,10 +1,10 @@
-import Link from 'next/link';
-import React from 'react'
+import Link from "next/link";
+import React from "react";
 
 const AdminNavbar = ({ children }) => {
   return (
     <>
-      <nav className="fixed top-0 z-50 w-full bg-gray-600 border-b border-gray-800">
+      <nav className="fixed top-0 z-50 w-full bg-gray-800 border-b border-gray-900">
         <div className="px-3 py-3 lg:px-5 lg:pl-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center justify-start rtl:justify-end">
@@ -65,7 +65,7 @@ const AdminNavbar = ({ children }) => {
                   <input
                     type="search"
                     id="default-search"
-                    className="block w-full p-2 ps-8 text-sm text-gray-100 border border-gray-300 rounded-lg bg-gray-500 focus:ring-gray-500 focus:border-gray-500    dark:text-white "
+                    className="block w-full p-2 ps-8 text-sm text-gray-100 border border-gray-700 rounded-lg bg-gray-700 focus:ring-gray-500 focus:border-gray-500  "
                     placeholder="Search Templates..."
                     required=""
                   />
@@ -151,19 +151,19 @@ const AdminNavbar = ({ children }) => {
           </div>
         </div>
       </nav>
-      <div className="grid grid-cols-12 w-full pt-20">
-        <div className='col-span-2'>
+      <div className="grid grid-cols-12 w-full pt-20 ">
+        <div className="col-span-2 ">
           <div
             id="logo-sidebar"
-            className="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-gray-50 border-r border-gray-200 sm:translate-x-0"
+            className="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-gray-800 border-r border-gray-900 sm:translate-x-0"
             aria-label="Sidebar"
           >
             <div className="h-full px-3 pb-4 overflow-y-auto">
               <ul className="space-y-2 font-medium ">
                 <li>
                   <Link
-                    href="/dashboard"
-                    className="flex items-center p-2 text-gray-900 rounded-lg  hover:bg-gray-600 hover:text-white group"
+                    href="/admin/dashboard"
+                    className="flex items-center p-2 text-white rounded-lg  hover:bg-gray-600 hover:text-white group"
                   >
                     <svg
                       className="w-5 h-5 text-gray-500 transition duration-75  group-hover:text-white"
@@ -182,7 +182,7 @@ const AdminNavbar = ({ children }) => {
                 <li>
                   <Link
                     href="/admin/add-template"
-                    className="flex items-center p-2 text-gray-900 rounded-lg  hover:bg-gray-600 hover:text-white group"
+                    className="flex items-center p-2 text-white rounded-lg  hover:bg-gray-600 hover:text-white group"
                   >
                     <svg
                       className="w-5 h-5 text-gray-500 transition duration-75  group-hover:text-white"
@@ -201,7 +201,7 @@ const AdminNavbar = ({ children }) => {
                 <li>
                   <Link
                     href="/admin/template-management"
-                    className="flex items-center p-2 text-gray-900 rounded-lg  hover:bg-gray-600 hover:text-white group"
+                    className="flex items-center p-2 text-white rounded-lg  hover:bg-gray-600 hover:text-white group"
                   >
                     <svg
                       className="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75  group-hover:text-white"
@@ -217,9 +217,9 @@ const AdminNavbar = ({ children }) => {
                     </span>
                   </Link>
                 </li>
-                <li>
-                  <a
-                    href="#"
+                {/* <li>
+                  <Link
+                    href="/admin/dashboard"
                     className="flex items-center p-2 text-gray-900 rounded-lg  hover:bg-gray-600 hover:text-white group"
                   >
                     <svg
@@ -232,15 +232,14 @@ const AdminNavbar = ({ children }) => {
                       <path d="m17.418 3.623-.018-.008a6.713 6.713 0 0 0-2.4-.569V2h1a1 1 0 1 0 0-2h-2a1 1 0 0 0-1 1v2H9.89A6.977 6.977 0 0 1 12 8v5h-2V8A5 5 0 1 0 0 8v6a1 1 0 0 0 1 1h8v4a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-4h6a1 1 0 0 0 1-1V8a5 5 0 0 0-2.582-4.377ZM6 12H4a1 1 0 0 1 0-2h2a1 1 0 0 1 0 2Z" />
                     </svg>
                     <span className="flex-1 ms-3 whitespace-nowrap">
-                      <Link href={"/admin/analytics"}>Analytics</Link>
-
+                      Dashboard
                     </span>
-                  </a>
-                </li>
+                  </Link>
+                </li> */}
                 <li>
-                  <a
-                    href="#"
-                    className="flex items-center p-2 text-gray-900 rounded-lg  hover:bg-gray-600 hover:text-white group"
+                  <Link
+                    href="/admin/users"
+                    className="flex items-center p-2 text-white rounded-lg  hover:bg-gray-600 hover:text-white group"
                   >
                     <svg
                       className="flex-shrink-0 w-5 h-5  text-gray-500 transition duration-75  group-hover:text-white"
@@ -252,15 +251,14 @@ const AdminNavbar = ({ children }) => {
                       <path d="M14 2a3.963 3.963 0 0 0-1.4.267 6.439 6.439 0 0 1-1.331 6.638A4 4 0 1 0 14 2Zm1 9h-1.264A6.957 6.957 0 0 1 15 15v2a2.97 2.97 0 0 1-.184 1H19a1 1 0 0 0 1-1v-1a5.006 5.006 0 0 0-5-5ZM6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z" />
                     </svg>
                     <span className="flex-1 ms-3 whitespace-nowrap">
-                      <Link href={"/admin/users"}>Users</Link>
-
+                      Users
                     </span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="#"
-                    className="flex items-center p-2 text-gray-900 rounded-lg  hover:bg-gray-600 hover:text-white group"
+                    className="flex items-center p-2 text-white rounded-lg  hover:bg-gray-600 hover:text-white group"
                   >
                     <svg
                       className="flex-shrink-0 w-5 h-5  text-gray-500 transition duration-75  group-hover:text-white"
@@ -271,19 +269,19 @@ const AdminNavbar = ({ children }) => {
                     >
                       <path d="M17 5.923A1 1 0 0 0 16 5h-3V4a4 4 0 1 0-8 0v1H2a1 1 0 0 0-1 .923L.086 17.846A2 2 0 0 0 2.08 20h13.84a2 2 0 0 0 1.994-2.153L17 5.923ZM7 9a1 1 0 0 1-2 0V7h2v2Zm0-5a2 2 0 1 1 4 0v1H7V4Zm6 5a1 1 0 1 1-2 0V7h2v2Z" />
                     </svg>
-                    <span className="flex-1 ms-3 whitespace-nowrap">Log Out</span>
-                  </a>
+                    <span className="flex-1 ms-3 whitespace-nowrap">
+                      Log Out
+                    </span>
+                  </Link>
                 </li>
               </ul>
             </div>
           </div>
         </div>
-        <div className='col-span-10'>
-          {children}
-        </div>
+        <div className="col-span-10">{children}</div>
       </div>
     </>
-  )
-}
+  );
+};
 
 export default AdminNavbar;
