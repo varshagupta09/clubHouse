@@ -30,7 +30,7 @@ export default function TypewriterEffectSmoothDemo() {
     <>
       <Navbar />
       <div className="flex flex-col items-center justify-center h-[40rem] bg-gray-900 ">
-        <p className="text-gray-600  text-md sm:text-base  ">
+        <p className="text-gray-300  text-md sm:text-base  ">
           Discover, customize, and integrate stunning React templates for your
           projects.{" "}
         </p>
