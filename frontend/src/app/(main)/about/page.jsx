@@ -4,15 +4,16 @@ import React from "react";
 
 const AboutUsPage = () => {
   return (
-    <section className="bg-gray-50">
-      <div className=" px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20 ">
-        <div className="grid gap-5 row-gap-10 lg:grid-cols-2">
-          <div className="flex flex-col justify-center">
+
+    <section className="p-10 bg-gray-900">
+      <div className="grid grid-cols-2 mb-16 ">
+        <div>
+          <div className="flex p-4 flex-col justify-center">
             <div className="max-w-xl mb-6">
-              <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-800 sm:text-4xl sm:leading-none">
+              <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-white sm:text-4xl sm:leading-none">
                 Welcome to ReactUIHub!
               </h2>
-              <p className="text-base text-gray-600 tracking-wide ">
+              <p className="text-base text-white tracking-wide ">
                 We're dedicated to simplifying your React development journey.
                 Our platform offers a curated selection of high-quality React
                 templates, empowering developers of all levels to create
@@ -27,11 +28,11 @@ const AboutUsPage = () => {
                 Welcome to the future of React development!
               </p>
             </div>
-            <p className="mb-4 text-lg font-bold tracking-widest uppercase text-gray-800  mt-5">
+            <p className="mb-4 text-lg font-bold tracking-widest uppercase text-white mt-5">
               Features
             </p>
             <div className="grid space-y-3 sm:gap-2 sm:grid-cols-2 sm:space-y-0">
-              <ul className="space-y-3 text-gray-600 tracking-wide  ">
+              <ul className="space-y-3 text-white tracking-wide  ">
                 <li className="flex">
                   <span className="mr-1">
                     <svg
@@ -87,7 +88,7 @@ const AboutUsPage = () => {
                   Comprehensive Documentation
                 </li>
               </ul>
-              <ul className="space-y-3 text-gray-600 tracking-wide ">
+              <ul className="space-y-3 text-white tracking-wide ">
                 <li className="flex">
                   <span className="mr-1">
                     <svg
@@ -144,37 +145,46 @@ const AboutUsPage = () => {
                 </li>
               </ul>
             </div>
-            <div className="max-w-xl mb-6 mt-5">
-              <h2 className="mb-4 text-lg font-bold tracking-widest  text-gray-800 mt-5">
-                Vision for the Future:
-              </h2>              
-              <p className="text-base text-gray-600 tracking-wide ">
-                Our vision for ReactUIHub is to become the premier platform for
-                React developers worldwide, offering innovative tools,
-                resources, and community support. We aim to empower developers
-                of all levels to create exceptional web experiences
-                effortlessly, driving forward the boundaries of what's possible
-                with React.
-              </p>
-            </div>
+
           </div>
-          <div className="flex items-center justify-center">
-            <img
-              className="object-cover w-full h-56 rounded shadow-lg sm:h-96"
-              src="/aboutus.png"
-              alt=""
-            />
-          </div>
-          <div className=" items-center justify-center">
-            <img
-              className="object-cover w-full h-56 rounded shadow-lg sm:h-96"
-              src="/aboutus1.png"
-              alt=""
-            />
+        </div>
+        <div className="block mx-auto my-auto">
+          <img
+            className="object-cover w-full h-56 rounded sm:h-96"
+            src="/aboutus.png"
+            alt=""
+          />
+        </div>
+      </div>
+
+      <div className="grid grid-cols-2">
+        <div className="block mx-auto my-auto">
+          <img
+            className="object-cover w-full h-56 rounded  sm:h-96"
+            src="/aboutus1.png"
+            alt=""
+          />
+        </div>
+        <div>
+          <div className="max-w-xl mb-6 mt-5 p-16">
+            <h2 className="mb-4 text-lg font-bold tracking-widest  text-white mt-5">
+              Vision for the Future:
+            </h2>
+            <p className="text-base text-white tracking-wide ">
+              Our vision for ReactUIHub is to become the premier platform for
+              React developers worldwide, offering innovative tools,
+              resources, and community support. We aim to empower developers
+              of all levels to create exceptional web experiences
+              effortlessly, driving forward the boundaries of what's possible
+              with React.
+            </p>
           </div>
         </div>
       </div>
     </section>
+
+
+
   );
 };
 
