@@ -64,7 +64,7 @@ const Signup = () => {
 
   return (
     <>
-      <div className="flex fle-col items-center justify-center min-h-screen py-2 " style={{ background: "#CADCFC" }}>
+      <div className="flex fle-col items-center justify-center min-h-screen py-2 bg-gray-50 " >
         <div className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
           <div className=" rounded-2xl shadow-2xl flex w-2/3 max-w-4xl">
               {/* image */}

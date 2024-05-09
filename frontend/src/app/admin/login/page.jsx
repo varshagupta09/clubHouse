@@ -50,14 +50,10 @@ const Login = () => {
                 setLoggedIn(true);
                 sessionStorage.setItem("user", JSON.stringify(data));
                 resetForm();
-                if (data.role === "admin") {
-                  router.push("/admin/add-template");
-                } else {
-                  router.push("/");
-                }
+                router.push("/");
               })
-          } else {
-            toast.error("Login Failed");
+          }else{
+             toast.error("Login Failed");
           }
         })
         .catch((err) => {
@@ -70,16 +66,16 @@ const Login = () => {
 
   return (
     <>
-      <div className="flex fle-col items-center justify-center min-h-screen py-2 " style={{ background: "#CADCFC" }}>
+      <div className="flex fle-col items-center justify-center min-h-screen py-2 bg-gray-50" >
         <div className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
           <div className="bg-white rounded-2xl shadow-2xl flex max-w-4xl">
             {/* form */}
             <form onSubmit={loginForm.handleSubmit}>
               <div className="p-10">
-                <h2 className="text-3xl font-bold mb-2" style={{ color: "#00246B" }}>LOGIN</h2>
-                <div className="border-2 w-10 border-cyan-950 inline-block mb-2" style={{ border: "2px solid #00246B" }}></div>
+                <h2 className="text-3xl font-bold mb-2" style={{color:"#00246B"}}>LOGIN</h2>
+                <div className="border-2 w-10 border-cyan-950 inline-block mb-2" style={{border:"2px solid #00246B"}}></div>
                 {/* Social Icons */}
-                <div className="flex justify-center my-2">
+                 <div className="flex justify-center my-2">
                   <a
                     href="#"
                     className="border-2 border-gray-200 rounded-full p-3 mx-1"

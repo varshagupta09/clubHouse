@@ -3,18 +3,18 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <nav className=" border-gray-200 w-screen" style={{background:"#002468"}}>
+    <nav className=" bg-gray-600 border-b border-gray-800 w-screen" >
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
-        <a href="#" className="flex items-center">
+        <Link href="/" className="flex items-center">
           <img
             src="/ReactUIHub_Logo.png"
             className="h-16 mr-3"
             alt="ReactUIHub Logo"
           />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+          <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">
             ReactUIHub
           </span>
-        </a>
+        </Link>
         <div className="flex md:order-2">
           <button
             type="button"
@@ -162,6 +162,14 @@ const Navbar = () => {
                 className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
                 Templates
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/browse-category"
+                className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+              >
+                Category
               </Link>
             </li>
           </ul>

@@ -71,13 +71,13 @@ const templatesearch = () => {
   return (
     <>
 
-    <div style={{ background: "#CADCFC" }} >
+    <div className="bg-gray-50" >
       
       <div className="text-center p-10">
         <form className="max-w-lg mx-auto ">
           <label
             htmlFor="default-search"
-            className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
+            className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-900"
           >
             Search
           </label>
@@ -102,7 +102,7 @@ const templatesearch = () => {
             <input
               type="search"
               id="default-search"
-              className="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-blue-50 focus:ring-blue-500 focus:border-blue-500  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-100 focus:ring-gray-500 focus:border-gray-500  "
               placeholder="Search templates..."
               onChange={searchTemplate}
             />

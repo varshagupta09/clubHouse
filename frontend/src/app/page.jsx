@@ -29,8 +29,8 @@ export default function TypewriterEffectSmoothDemo() {
   return (
     <>
       <Navbar/>
-      <div className="flex flex-col items-center justify-center h-[40rem] "style={{background:"#CADCFC"}} >
-        <p className="text-blue-600  text-md sm:text-base  ">
+      <div className="flex flex-col items-center justify-center h-[40rem] bg-gray-900 " >
+        <p className="text-gray-600  text-md sm:text-base  ">
         Discover, customize, and integrate stunning React templates for your projects.        </p>
         <TypewriterEffectSmooth words={words} />
         <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-4">
@@ -44,6 +44,7 @@ export default function TypewriterEffectSmoothDemo() {
           </button>
         </div>
       </div>
+     
       <Footer />
     </>
   );

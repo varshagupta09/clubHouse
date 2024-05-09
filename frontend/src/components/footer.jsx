@@ -2,7 +2,8 @@ import Link from "next/link";
 
 export const Footer = () => {
   return (
-    <footer style={{ background: "#00246B" }}>
+    <footer className="bg-gray-600 border-b border-gray-800 w-screen
+    ">
       <div className="container p-6 mx-auto">
         <div className="lg:flex">
           <div className="w-full -mx-6 lg:w-2/5">
