@@ -40,127 +40,141 @@ export default function TypewriterEffectSmoothDemo() {
             <Link href={"/template-search"}> Get Started</Link>
           </button>
           <button className="w-40 h-10 rounded-xl bg-white text-black border border-black hover:bg-black hover:border-white hover:text-white text-sm">
-            <Link href={"/signup"}>Sign Up</Link>
+            <Link href={"/browse-category"}>Browse Category</Link>
           </button>
         </div>
       </div>
 
-      <div className="bg-gray-400">
-        <div className="bg-gray-700 py-8">
-          <div className="container mx-auto px-4">
-            <h2 className="text-2xl font-bold mb-4 text-white">
-              Template Categories
-            </h2>
-            <div className="grid md:grid-cols-2 gap-4 lg:grid-cols-4">
-              <div className="bg-white rounded-lg shadow-md p-6">
-                <img
-                  src="blogging.png"
-                  alt="Category"
-                  className="w-12 h-12 mx-auto mb-4"
-                />
-                <h3 className="text-lg font-semibold text-center text-black mb-2">
-                  Business & Corporate
-                </h3>
+      <div className="bg-gray-700 py-8">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl font-bold mb-4 text-white">
+            Template Categories
+          </h2>
+          <div className="grid md:grid-cols-2 gap-4 lg:grid-cols-4">
+            <div className="bg-white rounded-lg shadow-md p-6">
+              <img
+                src="business.png"
+                alt="Category"
+                className="w-36 h-36 mx-auto "
+              />
+              <h3 className="text-lg font-semibold text-center text-black ">
+                Business & Corporate
+              </h3>
 
-                <button className="bg-gray-900 justify-center  mt-10 text-white hover:text-gray-900 hover:bg-gray-200 rounded-md px-3 py-1 ">
+              <div className="text-center">
+                <button className="bg-blue-700 justify-center  mt-5 text-white hover:text-gray-900 hover:bg-gray-200 rounded-md w-48 py-2 ">
                   View
                 </button>
               </div>
-              <div className="bg-white rounded-lg shadow-md p-6">
-                <img
-                  src="blogging.png"
-                  alt="Category"
-                  className="w-12 h-12 mx-auto mb-4"
-                />
-                <h3 className="text-lg font-semibold text-center mb-2">
-                  Portfolio & Resume
-                </h3>
+            </div>
+            <div className="bg-white rounded-lg shadow-md p-6">
+              <img
+                src="portfolioandresume.png"
+                alt="Category"
+                className="w-36 h-36 mx-auto "
+              />
+              <h3 className="text-lg font-semibold text-center text-black ">
+                Portfolio & Resume
+              </h3>
 
-                <button className="bg-gray-900 justify-center  mt-10 text-white hover:text-gray-900 hover:bg-gray-200 rounded-md px-3 py-1 ">
+              <div className="text-center">
+                <button className="bg-blue-700 justify-center  mt-5 text-white hover:text-gray-900 hover:bg-gray-200 rounded-md w-48 py-2 ">
                   View
                 </button>
               </div>
-              <div className="bg-white rounded-lg shadow-md p-6">
-                <img
-                  src="blogging.png"
-                  alt="Category"
-                  className="w-12 h-12 mx-auto mb-4"
-                />
-                <h3 className="text-lg font-semibold text-center mb-2">
-                  E-commerce & Online Stores
-                </h3>
+            </div>
+            <div className="bg-white rounded-lg shadow-md p-6">
+              <img
+                src="ecommercestore.png"
+                alt="Category"
+                className="w-36 h-36 mx-auto "
+              />
+              <h3 className="text-lg font-semibold text-center text-black ">
+                E-commerce Stores
+              </h3>
 
-                <button className="bg-gray-900 justify-center  mt-10 text-white hover:text-gray-900 hover:bg-gray-200 rounded-md px-3 py-1 ">
+              <div className="text-center">
+                <button className="bg-blue-700 justify-center  mt-5 text-white hover:text-gray-900 hover:bg-gray-200 rounded-md w-48 py-2 ">
                   View
                 </button>
               </div>
-              <div className="bg-white rounded-lg shadow-md p-6">
-                <img
-                  src="blogging.png"
-                  alt="Category"
-                  className="w-12 h-12 mx-auto mb-4"
-                />
-                <h3 className="text-lg font-semibold text-center mb-2">
-                  Blogging & Content Management
-                </h3>
+            </div>
+            <div className="bg-white rounded-lg shadow-md p-6">
+              <img
+                src="bloggingmanagement.png"
+                alt="Category"
+                className="w-36 h-36 mx-auto "
+              />
+              <h3 className="text-lg font-semibold text-center text-black">
+                Blogging Management
+              </h3>
 
-                <button className="bg-gray-900 justify-center  mt-10 text-white hover:text-gray-900 hover:bg-gray-200 rounded-md px-3 py-1 ">
+              <div className="text-center">
+                <button className="bg-blue-700 justify-center  mt-5 text-white hover:text-gray-900 hover:bg-gray-200 rounded-md w-48 py-2 ">
                   View
                 </button>
               </div>
-              <div className="bg-white rounded-lg shadow-md p-6">
-                <img
-                  src="blogging.png"
-                  alt="Category"
-                  className="w-12 h-12 mx-auto mb-4"
-                />
-                <h3 className="text-lg font-semibold text-center mb-2">
-                  Landing Page & Product Showcase
-                </h3>
+            </div>
+            <div className="bg-white rounded-lg shadow-md p-6">
+              <img
+                src="landingpage.png"
+                alt="Category"
+                className="w-36 h-36 mx-auto "
+              />
+              <h3 className="text-lg font-semibold text-center text-black">
+                Landing Page
+              </h3>
+              <div className="text-center">
+                <div className="text-center">
+                  <button className="bg-blue-700 justify-center  mt-5 text-white hover:text-gray-900 hover:bg-gray-200 rounded-md w-48 py-2 ">
+                    View
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white rounded-lg shadow-md p-6 justify-center items-center">
+              <img
+                src="dashboard.png"
+                alt="Category"
+                className="w-36 h-36 mx-auto "
+              />
+              <h3 className="text-lg font-semibold text-center text-black">
+                Dashboard & Analytics
+              </h3>
 
-                <button className="bg-gray-900 justify-center  mt-10 text-white hover:text-gray-900 hover:bg-gray-200 rounded-md px-3 py-1 ">
+              <div className="text-center">
+                <button className="bg-blue-700 justify-center  mt-5 text-white hover:text-gray-900 hover:bg-gray-200 rounded-md w-48 py-2 ">
                   View
                 </button>
               </div>
-              <div className="bg-white rounded-lg shadow-md p-6 justify-center items-center">
-                <img
-                  src="blogging.png"
-                  alt="Category"
-                  className="w-12 h-12 mx-auto mb-4"
-                />
-                <h3 className="text-lg font-semibold text-center mb-2">
-                  Dashboard & Analytics
-                </h3>
+            </div>
+            <div className="bg-white rounded-lg shadow-md p-6">
+              <img
+                src="creativeagency.png"
+                alt="Category"
+                className="w-36 h-36 mx-auto "
+              />
+              <h3 className="text-lg font-semibold text-center text-black">
+                Creative & Agency
+              </h3>
 
-                <button className="bg-gray-900  mt-10 text-white hover:text-gray-900 hover:bg-gray-200 rounded-md px-3 py-1 ">
+              <div className="text-center">
+                <button className="bg-blue-700 justify-center  mt-5 text-white hover:text-gray-900 hover:bg-gray-200 rounded-md w-48 py-2 ">
                   View
                 </button>
               </div>
-              <div className="bg-white rounded-lg shadow-md p-6">
-                <img
-                  src="blogging.png"
-                  alt="Category"
-                  className="w-12 h-12 mx-auto mb-4"
-                />
-                <h3 className="text-lg font-semibold text-center mb-2">
-                  Creative & Agency
-                </h3>
-
-                <button className="bg-gray-900 justify-center  mt-10 text-white hover:text-gray-900 hover:bg-gray-200 rounded-md px-3 py-1 ">
-                  View
-                </button>
-              </div>
-              <div className="bg-white rounded-lg shadow-md p-6">
-                <img
-                  src="blogging.png"
-                  alt="Category"
-                  className="w-12 h-12 mx-auto mb-4"
-                />
-                <h3 className="text-lg font-semibold text-center mb-2">
-                  Travel & Tourism
-                </h3>
-
-                <button className="bg-gray-900 justify-center  mt-10 text-white hover:text-gray-900 hover:bg-gray-200 rounded-md px-3 py-1 ">
+            </div>
+            <div className="bg-white rounded-lg shadow-md p-6">
+              <img
+                src="travel.png"
+                alt="Category"
+                className="w-36 h-36 mx-auto "
+              />
+              <h3 className="text-lg font-semibold text-center text-black">
+                Travel & Tourism
+              </h3>
+              <div className="text-center">
+                <button className="bg-blue-700 justify-center  mt-5 text-white hover:text-gray-900 hover:bg-gray-200 rounded-md w-48 py-2 ">
                   View
                 </button>
               </div>
@@ -168,11 +182,12 @@ export default function TypewriterEffectSmoothDemo() {
           </div>
         </div>
       </div>
-
       <div>
-        <div className="bg-gray-100 py-8">
+        <div className="bg-gray-700 py-8">
           <div className="container mx-auto px-4">
-            <h2 className="text-2xl font-bold mb-4">Featured Templates</h2>
+            <h2 className="text-2xl font-bold mb-4 text-white">
+              Featured Templates
+            </h2>
             <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
               <div className="bg-white rounded-lg shadow-md p-6">
                 <img
@@ -212,12 +227,81 @@ export default function TypewriterEffectSmoothDemo() {
 
                 <ul className="text-sm list-disc text-gray-600 ">
                   <li>
-                    Browse our curated collection of high-quality React
-                    templates covering various categories and styles.
+                    Browse our curated collection of React templates covering
+                    various categories.
                   </li>
+                </ul>
+              </div>
+              <div className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center">
+                <div className="bg-blue-500 text-white rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                  {/* Icon goes here */}1
+                </div>
+                <h3 className="text-lg text-black   font-semibold mb-2">
+                  Customize Your Design
+                </h3>
+
+                <ul className="text-sm list-disc text-gray-600 ">
                   <li>
-                    Find the perfect template for your project, whether it's for
-                    business, portfolio, e-commerce, or other purposes.
+                    Select and personalize a template to match your brand and
+                    preferences.
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center">
+                <div className="bg-blue-500 text-white rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                  {/* Icon goes here */}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-semibold mb-2">
+                  Integrate Seamlessly
+                </h3>
+                <p className="text-sm text-gray-600 text-center">
+                  Download and integrate the template files into your React
+                  project effortlessly.
+                </p>
+              </div>
+
+              <div className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center">
+                <div className="bg-blue-500 text-white rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                  {/* Icon goes here */}1
+                </div>
+                <h3 className="text-lg text-black   font-semibold mb-2">
+                  Collaborate and Innovate
+                </h3>
+
+                <ul className="text-sm list-disc text-gray-600 ">
+                  <li>
+                    Join our community to collaborate, learn, and access
+                    valuable resources.
+                  </li>
+                </ul>
+              </div>
+              <div className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center">
+                <div className="bg-blue-500 text-white rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                  {/* Icon goes here */}1
+                </div>
+                <h3 className="text-lg text-black   font-semibold mb-2">
+                  Launch Your Project{" "}
+                </h3>
+
+                <ul className="text-sm list-disc text-gray-600 ">
+                  <li>
+                    Build exceptional web experiences and launch your project
+                    with confidence.
                   </li>
                 </ul>
               </div>
