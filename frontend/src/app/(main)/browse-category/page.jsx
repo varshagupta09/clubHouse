@@ -6,7 +6,7 @@ const BrowseCategory = () => {
 
 <div className="bg-gray-700 py-8">
   <div className="container mx-auto px-4">
-    <h2 className="text-2xl font-bold mb-4">Template Categories</h2>
+    <h2 className="text-2xl font-bold mb-4 text-white">Template Categories</h2>
     <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
     <div className="bg-white rounded-lg shadow-md p-6">
     <img
