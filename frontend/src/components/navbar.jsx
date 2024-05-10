@@ -124,7 +124,7 @@ const Navbar = () => {
             <li>
               <a
                 href="#"
-                className="block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:p-0"
+                className="block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:p-0 md:hover:text-blue-500"
                 aria-current="page"
               >
 
