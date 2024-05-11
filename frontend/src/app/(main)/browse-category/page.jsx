@@ -136,16 +136,16 @@ const BrowseCategory = () => {
   <div className="bg-gray-900 py-8">
         <div className="container mx-auto px-4">
           <h2 className="text-2xl font-bold mb-4 text-white">
-            Template Categories
+             Categories
           </h2>
           <div className="grid md:grid-cols-2 gap-4 lg:grid-cols-4">
-            <div className="bg-white rounded-lg shadow-md p-6">
+            <div className="bg-gray-600 rounded-lg shadow-md p-6">
               <img
                 src="business.png"
                 alt="Category"
                 className="w-36 h-36 mx-auto "
               />
-              <h3 className="text-lg font-semibold text-center text-black ">
+              <h3 className="text-lg font-semibold text-center text-white ">
                 Business & Corporate
               </h3>
 

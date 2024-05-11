@@ -32,7 +32,7 @@ export default function TypewriterEffectSmoothDemo() {
   const [masterList, setMasterList] = useState([]);
 
   const fetchTemplatesData = () => {
-    fetch('http://localhost:5500/template/getall')
+    fetch("http://localhost:5500/template/getall")
       .then((response) => {
         return response.json();
       })
@@ -44,49 +44,49 @@ export default function TypewriterEffectSmoothDemo() {
       .catch((err) => {
         console.log(err);
       });
-  }
+  };
 
   useEffect(() => {
     fetchTemplatesData();
-  }, [])
+  }, []);
 
   const displayTemplates = () => {
     if (templateList.length === 0) {
-      return <h2>No templates found</h2>
+      return <h2>No templates found</h2>;
     } else {
-      return templateList.map(template => (
-
-        // dfds
-
-
-
-              <div className="bg-white rounded-lg shadow-md p-6">
-                <img
-                  src={`${process.env.NEXT_PUBLIC_API_URL}/${template.image}`}
-                  alt={template.title}
-                  className="w-full h-48 object-cover mb-4"
-                />
-                <h3 className="text-lg font-semibold mb-2"> {template.title}</h3>
-                <p className="text-sm text-gray-600">
-                  Brief description or summary of the template.
-                </p>
-                <Link href={'/templateview/' + template._id} className="bg-blue-500 rounded-md hover:bg-blue-700 text-white font-bold py-2 px-4 roundeds">
-               View Details
-               </Link>
-              </div>
-        
-        // fdsfdsf
-  
-      ))
+      return templateList.map((template) => (
+        <div className=" p-6">
+          <img
+            src={`${process.env.NEXT_PUBLIC_API_URL}/${template.image}`}
+            alt={template.title}
+            className="w-full h-48 object-cover rounded-md mb-4"
+          />
+          <h3 className="text-lg font-semibold text-white mb-2">
+            {" "}
+            {template.title}
+          </h3>
+          <p className="text-sm text-white mb-10">
+            Brief description or summary of the template.
+          </p>
+          <div className="text-center ">
+            <Link
+              href={"/templateview/" + template._id}
+              className="bg-blue-600 justify-center  text-white font-semibold hover:text-white hover:bg-blue-500 rounded-full w-48  py-3 px-5 "
+            >
+              View Details
+            </Link>
+          </div>
+        </div>
+      ));
     }
-  }
+  };
   return (
     <>
       <Navbar />
-      <div className="flex flex-col items-center justify-center h-[40rem] bg-gray-900 ">
-   <div className="w-80 h-80">
+      <div className="flex flex-col items-center justify-center h-screen bg-gray-900 ">
+        <div className="w-96 h-96">
           <img src="ReactUIHub_Logo.png " alt="" />
-          </div>
+        </div>
         <p className="text-gray-300  text-md sm:text-base  ">
           Discover, customize, and integrate stunning React templates for your
           projects.{" "}
@@ -102,136 +102,136 @@ export default function TypewriterEffectSmoothDemo() {
         </div>
       </div>
 
-      <div className="bg-gray-900 py-8">
+      <div className="bg-gray-900 ">
         <div className="container mx-auto px-4">
-          <h2 className="text-2xl font-bold mb-4 text-white">
+          <h2 className="text-2xl font-bold text-white mb-4 p-4 text-center rounded-lg">
             Template Categories
           </h2>
           <div className="grid md:grid-cols-2 gap-4 lg:grid-cols-4">
-            <div className="bg-white rounded-lg shadow-md p-6">
+            <div className="p-6">
               <img
                 src="business.png"
                 alt="Category"
                 className="w-36 h-36 mx-auto "
               />
-              <h3 className="text-lg font-semibold text-center text-black ">
+              <h3 className="text-lg font-semibold text-center text-white ">
                 Business & Corporate
               </h3>
 
               <div className="text-center">
-                <button className="bg-blue-700 justify-center  mt-5 text-white hover:text-gray-900 hover:bg-gray-200 rounded-md w-48 py-2 ">
+                <button className="bg-blue-600 justify-center  mt-5 text-white font-semibold hover:text-white hover:bg-blue-500 rounded-full w-48 py-2 ">
                   View
                 </button>
               </div>
             </div>
-            <div className="bg-white rounded-lg shadow-md p-6">
+            <div className="p-6">
               <img
                 src="portfolioandresume.png"
                 alt="Category"
                 className="w-36 h-36 mx-auto "
               />
-              <h3 className="text-lg font-semibold text-center text-black ">
+              <h3 className="text-lg font-semibold text-center text-white ">
                 Portfolio & Resume
               </h3>
 
               <div className="text-center">
-                <button className="bg-blue-700 justify-center  mt-5 text-white hover:text-gray-900 hover:bg-gray-200 rounded-md w-48 py-2 ">
+                <button className="bg-blue-600 justify-center  mt-5 text-white font-semibold hover:text-white hover:bg-blue-500 rounded-full w-48 py-2 ">
                   View
                 </button>
               </div>
             </div>
-            <div className="bg-white rounded-lg shadow-md p-6">
+            <div className=" p-6">
               <img
                 src="ecommercestore.png"
                 alt="Category"
                 className="w-36 h-36 mx-auto "
               />
-              <h3 className="text-lg font-semibold text-center text-black ">
+              <h3 className="text-lg font-semibold text-center text-white ">
                 E-commerce Stores
               </h3>
 
               <div className="text-center">
-                <button className="bg-blue-700 justify-center  mt-5 text-white hover:text-gray-900 hover:bg-gray-200 rounded-md w-48 py-2 ">
+                <button className="bg-blue-600 justify-center  mt-5 text-white font-semibold hover:text-white hover:bg-blue-500 rounded-full w-48 py-2 ">
                   View
                 </button>
               </div>
             </div>
-            <div className="bg-white rounded-lg shadow-md p-6">
+            <div className=" p-6">
               <img
                 src="bloggingmanagement.png"
                 alt="Category"
                 className="w-36 h-36 mx-auto "
               />
-              <h3 className="text-lg font-semibold text-center text-black">
+              <h3 className="text-lg font-semibold text-center text-white">
                 Blogging Management
               </h3>
 
               <div className="text-center">
-                <button className="bg-blue-700 justify-center  mt-5 text-white hover:text-gray-900 hover:bg-gray-200 rounded-md w-48 py-2 ">
+                <button className="bg-blue-600 justify-center  mt-5 text-white font-semibold hover:text-white hover:bg-blue-500 rounded-full w-48 py-2 ">
                   View
                 </button>
               </div>
             </div>
-            <div className="bg-white rounded-lg shadow-md p-6">
+            <div className="p-6">
               <img
                 src="landingpage.png"
                 alt="Category"
                 className="w-36 h-36 mx-auto "
               />
-              <h3 className="text-lg font-semibold text-center text-black">
+              <h3 className="text-lg font-semibold text-center text-white">
                 Landing Page
               </h3>
               <div className="text-center">
                 <div className="text-center">
-                  <button className="bg-blue-700 justify-center  mt-5 text-white hover:text-gray-900 hover:bg-gray-200 rounded-md w-48 py-2 ">
+                  <button className="bg-blue-600 justify-center  mt-5 text-white font-semibold hover:text-white hover:bg-blue-500 rounded-full w-48 py-2 ">
                     View
                   </button>
                 </div>
               </div>
             </div>
-            <div className="bg-white rounded-lg shadow-md p-6 justify-center items-center">
+            <div className="p-6">
               <img
                 src="dashboard.png"
                 alt="Category"
                 className="w-36 h-36 mx-auto "
               />
-              <h3 className="text-lg font-semibold text-center text-black">
+              <h3 className="text-lg font-semibold text-center text-white">
                 Dashboard & Analytics
               </h3>
 
               <div className="text-center">
-                <button className="bg-blue-700 justify-center  mt-5 text-white hover:text-gray-900 hover:bg-gray-200 rounded-md w-48 py-2 ">
+                <button className="bg-blue-600 justify-center  mt-5 text-white font-semibold hover:text-white hover:bg-blue-500 rounded-full w-48 py-2 ">
                   View
                 </button>
               </div>
             </div>
-            <div className="bg-white rounded-lg shadow-md p-6">
+            <div className="p-6">
               <img
                 src="creativeagency.png"
                 alt="Category"
                 className="w-36 h-36 mx-auto "
               />
-              <h3 className="text-lg font-semibold text-center text-black">
+              <h3 className="text-lg font-semibold text-center text-white">
                 Creative & Agency
               </h3>
 
               <div className="text-center">
-                <button className="bg-blue-700 justify-center  mt-5 text-white hover:text-gray-900 hover:bg-gray-200 rounded-md w-48 py-2 ">
+                <button className="bg-blue-600 justify-center  mt-5 text-white font-semibold hover:text-white hover:bg-blue-500 rounded-full w-48 py-2 ">
                   View
                 </button>
               </div>
             </div>
-            <div className="bg-white rounded-lg shadow-md p-6">
+            <div className=" p-6">
               <img
                 src="travel.png"
                 alt="Category"
                 className="w-36 h-36 mx-auto "
               />
-              <h3 className="text-lg font-semibold text-center text-black">
+              <h3 className="text-lg font-semibold text-center text-white">
                 Travel & Tourism
               </h3>
               <div className="text-center">
-                <button className="bg-blue-700 justify-center  mt-5 text-white hover:text-gray-900 hover:bg-gray-200 rounded-md w-48 py-2 ">
+                <button className="bg-blue-600 justify-center  mt-5 text-white font-semibold hover:text-white hover:bg-blue-500 rounded-full w-48 py-2 ">
                   View
                 </button>
               </div>
@@ -242,18 +242,13 @@ export default function TypewriterEffectSmoothDemo() {
       <div>
         <div className="bg-gray-900 py-8">
           <div className="container mx-auto px-4">
-            <h2 className="text-2xl font-bold mb-4 text-white">
+            <h2 className="text-2xl font-bold text-white mb-4 p-4 text-center ">
               Featured Templates
             </h2>
             <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-             
               {displayTemplates()}
             </div>
-
-                 
-
           </div>
-          
         </div>
       </div>
 
@@ -261,85 +256,79 @@ export default function TypewriterEffectSmoothDemo() {
       <div>
         <div className="bg-gray-900 py-8">
           <div className="container mx-auto px-4">
-            <h2 className="text-2xl font-bold text-black mb-4 bg-white p-4 text-center">How It Works</h2>
+            <h2 className="text-2xl font-bold text-white mb-4  p-4 text-center ">
+              How It Works
+            </h2>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-              <div className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center">
+              <div className=" rounded-lg shadow-md p-6 flex flex-col items-center ">
                 <div className="bg-blue-500 text-white rounded-full w-12 h-12 flex items-center justify-center mb-4">
                   {/* Icon goes here */}1
                 </div>
-                <h3 className="text-lg text-black   font-semibold mb-2">
+                <h3 className="text-lg text-white   font-semibold mb-2">
                   Explore Templates
                 </h3>
-
-                <ul className="text-sm list-disc text-gray-600 ">
-                  <li>
-                    Browse our curated collection of React templates covering
-                    various categories.
-                  </li>
-                </ul>
+                <p className="text-center">
+                  {" "}
+                  Browse our curated collection of React templates covering
+                  various categories.
+                </p>
               </div>
-              <div className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center">
+              <div className="   p-6 flex flex-col items-center">
                 <div className="bg-blue-500 text-white rounded-full w-12 h-12 flex items-center justify-center mb-4">
                   {/* Icon goes here */}2
                 </div>
-                <h3 className="text-lg text-black   font-semibold mb-2">
+                <h3 className="text-lg text-white   font-semibold mb-2">
                   Customize Your Design
                 </h3>
 
-                <ul className="text-sm list-disc text-gray-600 ">
-                  <li>
-                    Select and personalize a template to match your brand and
-                    preferences.
-                  </li>
-                </ul>
+                <p className="text-center">
+                  {" "}
+                  Select and personalize a template to match your brand and
+                  preferences.
+                </p>
               </div>
 
-              <div className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center">
+              <div className="p-6 flex flex-col items-center">
                 <div className="bg-blue-500 text-white rounded-full w-12 h-12 flex items-center justify-center mb-4">
                   {/* Icon goes here */}3
                 </div>
-                <h3 className="text-lg text-black   font-semibold mb-2">
-                Integrate Seamlessly
+                <h3 className="text-lg text-white   font-semibold mb-2">
+                  Integrate Seamlessly
                 </h3>
 
-                <ul className="text-sm list-disc text-gray-600 ">
-                  <li>
+                <p className="text-center">
+                  {" "}
                   Download and integrate the template files into your React
                   project effortlessly.
-                  </li>
-                </ul>
+                </p>
               </div>
 
-
-              <div className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center">
+              <div className=" p-6 flex flex-col items-center">
                 <div className="bg-blue-500 text-white rounded-full w-12 h-12 flex items-center justify-center mb-4">
                   {/* Icon goes here */}4
                 </div>
-                <h3 className="text-lg text-black   font-semibold mb-2">
+                <h3 className="text-lg text-white   font-semibold mb-2">
                   Collaborate and Innovate
                 </h3>
-
-                <ul className="text-sm list-disc text-gray-600 ">
-                  <li>
-                    Join our community to collaborate, learn, and access
-                    valuable resources.
-                  </li>
-                </ul>
+                <p className="text-center">
+                  {" "}
+                  Join our community to collaborate, learn, and access valuable
+                  resources.
+                </p>
               </div>
-              <div className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center">
+              <div className=" p-6 flex flex-col items-center">
                 <div className="bg-blue-500 text-white rounded-full w-12 h-12 flex items-center justify-center mb-4">
                   {/* Icon goes here */}5
                 </div>
-                <h3 className="text-lg text-black   font-semibold mb-2">
+                <h3 className="text-lg text-white   font-semibold mb-2">
                   Launch Your Project{" "}
                 </h3>
 
-                <ul className="text-sm list-disc text-gray-600 ">
-                  <li>
-                    Build exceptional web experiences and launch your project
-                    with confidence.
-                  </li>
-                </ul>
+                <p className="text-center">
+                  {" "}
+                  Build exceptional web experiences and launch your project with
+                  confidence.
+                </p>
               </div>
             </div>
           </div>
