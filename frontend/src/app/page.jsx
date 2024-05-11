@@ -213,9 +213,9 @@ export default function TypewriterEffectSmoothDemo() {
 
       {/* How It Works Section */}
       <div>
-        <div className="bg-gray-100 py-8">
+        <div className="bg-gray-700 py-8">
           <div className="container mx-auto px-4">
-            <h2 className="text-2xl font-bold mb-4">How It Works</h2>
+            <h2 className="text-2xl font-bold text-black mb-4 bg-white p-4 text-center">How It Works</h2>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               <div className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center">
                 <div className="bg-blue-500 text-white rounded-full w-12 h-12 flex items-center justify-center mb-4">
@@ -250,30 +250,20 @@ export default function TypewriterEffectSmoothDemo() {
 
               <div className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center">
                 <div className="bg-blue-500 text-white rounded-full w-12 h-12 flex items-center justify-center mb-4">
-                  {/* Icon goes here */}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
+                  {/* Icon goes here */}1
                 </div>
-                <h3 className="text-lg font-semibold mb-2">
-                  Integrate Seamlessly
+                <h3 className="text-lg text-black   font-semibold mb-2">
+                Integrate Seamlessly
                 </h3>
-                <p className="text-sm text-gray-600 text-center">
+
+                <ul className="text-sm list-disc text-gray-600 ">
+                  <li>
                   Download and integrate the template files into your React
                   project effortlessly.
-                </p>
+                  </li>
+                </ul>
               </div>
+
 
               <div className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center">
                 <div className="bg-blue-500 text-white rounded-full w-12 h-12 flex items-center justify-center mb-4">
