@@ -71,7 +71,7 @@ const templatesearch = () => {
   return (
     <>
 
-    <div className="bg-gray-50" >
+    <div className="bg-gray-900" >
       
       <div className="text-center p-10">
         <form className="max-w-lg mx-auto ">

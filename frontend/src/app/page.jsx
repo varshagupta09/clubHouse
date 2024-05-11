@@ -2,6 +2,8 @@
 import Footer from "@/components/footer";
 import { TypewriterEffectSmooth } from "../components/ui/typewriter-effect";
 import Navbar from "@/components/navbar";
+import React, { useEffect, useState } from "react";
+
 import Link from "next/link";
 import { color } from "framer-motion";
 export default function TypewriterEffectSmoothDemo() {
@@ -23,13 +25,68 @@ export default function TypewriterEffectSmoothDemo() {
     },
     {
       text: "ReactUIHub.",
-      className: "text-blue-500",
+      className: "text-sky-300",
     },
   ];
+  const [templateList, setTemplateList] = useState([]);
+  const [masterList, setMasterList] = useState([]);
+
+  const fetchTemplatesData = () => {
+    fetch('http://localhost:5500/template/getall')
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        setTemplateList(data);
+        setMasterList(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  useEffect(() => {
+    fetchTemplatesData();
+  }, [])
+
+  const displayTemplates = () => {
+    if (templateList.length === 0) {
+      return <h2>No templates found</h2>
+    } else {
+      return templateList.map(template => (
+
+        // dfds
+
+
+
+              <div className="bg-white rounded-lg shadow-md p-6">
+                <img
+                  src={`${process.env.NEXT_PUBLIC_API_URL}/${template.image}`}
+                  alt={template.title}
+                  className="w-full h-48 object-cover mb-4"
+                />
+                <h3 className="text-lg font-semibold mb-2"> {template.title}</h3>
+                <p className="text-sm text-gray-600">
+                  Brief description or summary of the template.
+                </p>
+                <Link href={'/templateview/' + template._id} className="bg-blue-500 rounded-md hover:bg-blue-700 text-white font-bold py-2 px-4 roundeds">
+               View Details
+               </Link>
+              </div>
+        
+        // fdsfdsf
+  
+      ))
+    }
+  }
   return (
     <>
       <Navbar />
       <div className="flex flex-col items-center justify-center h-[40rem] bg-gray-900 ">
+   <div className="w-80 h-80">
+          <img src="ReactUIHub_Logo.png " alt="" />
+          </div>
         <p className="text-gray-300  text-md sm:text-base  ">
           Discover, customize, and integrate stunning React templates for your
           projects.{" "}
@@ -45,7 +102,7 @@ export default function TypewriterEffectSmoothDemo() {
         </div>
       </div>
 
-      <div className="bg-gray-700 py-8">
+      <div className="bg-gray-900 py-8">
         <div className="container mx-auto px-4">
           <h2 className="text-2xl font-bold mb-4 text-white">
             Template Categories
@@ -183,37 +240,26 @@ export default function TypewriterEffectSmoothDemo() {
         </div>
       </div>
       <div>
-        <div className="bg-gray-700 py-8">
+        <div className="bg-gray-900 py-8">
           <div className="container mx-auto px-4">
             <h2 className="text-2xl font-bold mb-4 text-white">
               Featured Templates
             </h2>
             <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-              <div className="bg-white rounded-lg shadow-md p-6">
-                <img
-                  src="template-preview.jpg"
-                  alt="Template Preview"
-                  className="w-full h-48 object-cover mb-4"
-                />
-                <h3 className="text-lg font-semibold mb-2">Template Title</h3>
-                <p className="text-sm text-gray-600">
-                  Brief description or summary of the template.
-                </p>
-                <a
-                  href="#"
-                  className="block mt-4 text-blue-600 hover:underline"
-                >
-                  Learn More
-                </a>
-              </div>
+             
+              {displayTemplates()}
             </div>
+
+                 
+
           </div>
+          
         </div>
       </div>
 
       {/* How It Works Section */}
       <div>
-        <div className="bg-gray-700 py-8">
+        <div className="bg-gray-900 py-8">
           <div className="container mx-auto px-4">
             <h2 className="text-2xl font-bold text-black mb-4 bg-white p-4 text-center">How It Works</h2>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -234,7 +280,7 @@ export default function TypewriterEffectSmoothDemo() {
               </div>
               <div className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center">
                 <div className="bg-blue-500 text-white rounded-full w-12 h-12 flex items-center justify-center mb-4">
-                  {/* Icon goes here */}1
+                  {/* Icon goes here */}2
                 </div>
                 <h3 className="text-lg text-black   font-semibold mb-2">
                   Customize Your Design
@@ -250,7 +296,7 @@ export default function TypewriterEffectSmoothDemo() {
 
               <div className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center">
                 <div className="bg-blue-500 text-white rounded-full w-12 h-12 flex items-center justify-center mb-4">
-                  {/* Icon goes here */}1
+                  {/* Icon goes here */}3
                 </div>
                 <h3 className="text-lg text-black   font-semibold mb-2">
                 Integrate Seamlessly
@@ -267,7 +313,7 @@ export default function TypewriterEffectSmoothDemo() {
 
               <div className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center">
                 <div className="bg-blue-500 text-white rounded-full w-12 h-12 flex items-center justify-center mb-4">
-                  {/* Icon goes here */}1
+                  {/* Icon goes here */}4
                 </div>
                 <h3 className="text-lg text-black   font-semibold mb-2">
                   Collaborate and Innovate
@@ -282,7 +328,7 @@ export default function TypewriterEffectSmoothDemo() {
               </div>
               <div className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center">
                 <div className="bg-blue-500 text-white rounded-full w-12 h-12 flex items-center justify-center mb-4">
-                  {/* Icon goes here */}1
+                  {/* Icon goes here */}5
                 </div>
                 <h3 className="text-lg text-black   font-semibold mb-2">
                   Launch Your Project{" "}
