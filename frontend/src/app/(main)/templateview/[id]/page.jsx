@@ -161,7 +161,7 @@ const templateview = () => {
   const displayTemplate = () => {
     if (templateDetails !== null) {
       return (
-        <div className="font-[sans-serif] bg-gray-50">
+        <div className="font-[sans-serif] bg-gray-900">
           <div className="p-10 lg:max-w-full max-w-2xl max-lg:mx-auto items-center">
             <div className="grid  grid-cols-1 lg:grid-cols-2 gap-10 p-5   ">
               <div className="w-full lg:sticky top-0 ">
@@ -174,10 +174,10 @@ const templateview = () => {
                 </div>
                 <div className="mt-8">
                   <div>
-                    <h2 className="text-3xl font-extrabold text-gray-900">
+                    <h2 className="text-3xl font-extrabold text-white">
                       {templateDetails.title}
                     </h2>
-                    <p className="text-sm text-gray-900 mt-2">
+                    <p className="text-sm text-white mt-2">
                       {templateDetails.category}
                     </p>
                   </div>
@@ -201,7 +201,7 @@ const templateview = () => {
                   <div className="flex flex-wrap gap-4">
                     <button
                       type="button"
-                      className=" px-4 py-2.5 border border-gray-200 bg-transparent text-gray-900 text-sm font-bold rounded"
+                      className=" px-4 py-2.5 border border-gray-200 bg-transparent text-white text-sm font-bold rounded"
                     >
                       Download
                     </button>
@@ -214,7 +214,7 @@ const templateview = () => {
                     onClick={(e) => setSelSection("description")}
                     className={`${
                       selSection === "description" &&
-                      "border-gray-800 text-gray-800 bg-gray-100"
+                      "border-blue-700 text-gray-800 bg-gray-100 "
                     } border-b-2 font-bold text-sm  py-3 px-8 cursor-pointer transition-all`}
                   >
                     Description
@@ -232,7 +232,7 @@ const templateview = () => {
                 {selSection === "description" ? (
                   <div>
                     <div className="mt-8">
-                      <h3 className="text-lg font-bold text-gray-900">
+                      <h3 className="text-lg font-bold text-white">
                         Product Description
                       </h3>
                       <p className="text-sm text-gray-400 mt-4">
@@ -243,7 +243,7 @@ const templateview = () => {
                 ) : (
                   <div>
                     <div className="mt-8">
-                      <h3 className="text-lg font-bold text-gray-900">Reviews</h3>
+                      <h3 className="text-lg font-bold text-white">Reviews</h3>
 
                       {ratingForm()}
 

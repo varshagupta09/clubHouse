@@ -41,28 +41,30 @@ const templatesearch = () => {
       return <h2>No templates found</h2>
     } else {
       return templateList.map(template => (
-        <div className="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
-          <a href="#">
-            <img
-              src={`${process.env.NEXT_PUBLIC_API_URL}/${template.image}`}
-              alt={template.title}
-              className="h-40 w-72 object-cover rounded-t-xl"
-            />
-            <div className="px-4 py-3 w-72">
-              <p className="text-lg font-bold text-black truncate block capitalize">
-                {template.title}
-              </p>
-              <div className="flex items-center ">
-                <div className="ml-auto pt-5 ">
-                
-                  <Link href={'/templateview/' + template._id} className="bg-blue-500 rounded-md hover:bg-blue-700 text-white font-bold py-2 px-4 roundeds">
-                    View Details
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </a>
+      
+
+        <div className=" py-8">
+        <img
+          src={`${process.env.NEXT_PUBLIC_API_URL}/${template.image}`}
+          alt={template.title}
+          className="w-full h-48 object-cover rounded-md mb-4"
+        />
+        <h3 className="text-lg font-semibold text-white mb-2">
+          {" "}
+          {template.title}
+        </h3>
+        <p className="text-sm text-white mb-10">
+          Brief description or summary of the template.
+        </p>
+        <div className="text-center ">
+          <Link
+            href={"/templateview/" + template._id}
+            className="bg-blue-600 justify-center  text-white font-semibold hover:text-white hover:bg-blue-500 rounded-full w-48  py-3 px-5 "
+          >
+            View Details
+          </Link>
         </div>
+      </div>
       ))
     }
   }
@@ -117,7 +119,7 @@ const templatesearch = () => {
       </div>
       <section
         id="Projects"
-        className="w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 pb-20"
+        className="w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-10 gap-x-10  pb-20"
       >
         {displayTemplates()}
       </section>
