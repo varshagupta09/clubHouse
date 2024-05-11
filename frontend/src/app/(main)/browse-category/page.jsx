@@ -134,12 +134,15 @@ const BrowseCategory = () => {
   </div>
 </div> */}
   <div className="bg-gray-900 py-8">
+
+    
         <div className="container mx-auto px-4">
-          <h2 className="text-2xl font-bold mb-4 text-white">
+
+          <h2 className="text-2xl font-bold mb-4 text-center text-white">
              Categories
           </h2>
-          <div className="grid md:grid-cols-2 gap-4 lg:grid-cols-4">
-            <div className="bg-gray-600 rounded-lg shadow-md p-6">
+          <div className="grid md:grid-cols-2 gap-4 lg:grid-cols-3">
+            <div className="bg-gray-800 rounded-lg shadow-md p-6">
               <img
                 src="business.png"
                 alt="Category"
@@ -155,13 +158,13 @@ const BrowseCategory = () => {
                 </button>
               </div>
             </div>
-            <div className="bg-white rounded-lg shadow-md p-6">
+            <div className="bg-gray-800 rounded-lg shadow-md p-6">
               <img
                 src="portfolioandresume.png"
                 alt="Category"
                 className="w-36 h-36 mx-auto "
               />
-              <h3 className="text-lg font-semibold text-center text-black ">
+              <h3 className="text-lg font-semibold text-center text-white ">
                 Portfolio & Resume
               </h3>
 
@@ -171,13 +174,13 @@ const BrowseCategory = () => {
                 </button>
               </div>
             </div>
-            <div className="bg-white rounded-lg shadow-md p-6">
+            <div className="bg-gray-800 rounded-lg shadow-md p-6">
               <img
                 src="ecommercestore.png"
                 alt="Category"
                 className="w-36 h-36 mx-auto "
               />
-              <h3 className="text-lg font-semibold text-center text-black ">
+              <h3 className="text-lg font-semibold text-center text-white ">
                 E-commerce Stores
               </h3>
 
@@ -187,13 +190,13 @@ const BrowseCategory = () => {
                 </button>
               </div>
             </div>
-            <div className="bg-white rounded-lg shadow-md p-6">
+            <div className="bg-gray-800 rounded-lg shadow-md p-6">
               <img
                 src="bloggingmanagement.png"
                 alt="Category"
                 className="w-36 h-36 mx-auto "
               />
-              <h3 className="text-lg font-semibold text-center text-black">
+              <h3 className="text-lg font-semibold text-center text-white">
                 Blogging Management
               </h3>
 
@@ -203,13 +206,13 @@ const BrowseCategory = () => {
                 </button>
               </div>
             </div>
-            <div className="bg-white rounded-lg shadow-md p-6">
+            <div className="bg-gray-800 rounded-lg shadow-md p-6">
               <img
                 src="landingpage.png"
                 alt="Category"
                 className="w-36 h-36 mx-auto "
               />
-              <h3 className="text-lg font-semibold text-center text-black">
+              <h3 className="text-lg font-semibold text-center text-white">
                 Landing Page
               </h3>
               <div className="text-center">
@@ -220,13 +223,13 @@ const BrowseCategory = () => {
                 </div>
               </div>
             </div>
-            <div className="bg-white rounded-lg shadow-md p-6 justify-center items-center">
+            <div className="bg-gray-800 rounded-lg shadow-md p-6 justify-center items-center">
               <img
                 src="dashboard.png"
                 alt="Category"
                 className="w-36 h-36 mx-auto "
               />
-              <h3 className="text-lg font-semibold text-center text-black">
+              <h3 className="text-lg font-semibold text-center text-white">
                 Dashboard & Analytics
               </h3>
 
@@ -236,13 +239,13 @@ const BrowseCategory = () => {
                 </button>
               </div>
             </div>
-            <div className="bg-white rounded-lg shadow-md p-6">
+            <div className="bg-gray-800 rounded-lg shadow-md p-6">
               <img
                 src="creativeagency.png"
                 alt="Category"
                 className="w-36 h-36 mx-auto "
               />
-              <h3 className="text-lg font-semibold text-center text-black">
+              <h3 className="text-lg font-semibold text-center text-white">
                 Creative & Agency
               </h3>
 
@@ -252,13 +255,13 @@ const BrowseCategory = () => {
                 </button>
               </div>
             </div>
-            <div className="bg-white rounded-lg shadow-md p-6">
+            <div className="bg-gray-800 rounded-lg shadow-md p-6">
               <img
                 src="travel.png"
                 alt="Category"
                 className="w-36 h-36 mx-auto "
               />
-              <h3 className="text-lg font-semibold text-center text-black">
+              <h3 className="text-lg font-semibold text-center text-white">
                 Travel & Tourism
               </h3>
               <div className="text-center">
