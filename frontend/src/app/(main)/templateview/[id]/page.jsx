@@ -163,7 +163,7 @@ const templateview = () => {
       return (
         <div className="font-[sans-serif] bg-gray-900">
           <div className="p-10 lg:max-w-full max-w-2xl max-lg:mx-auto items-center">
-            <div className="grid  grid-cols-1 lg:grid-cols-2 gap-10 p-5   ">
+            <div className="grid  grid-cols-1 lg:grid-cols-2 gap-5 p-5   ">
               <div className="w-full lg:sticky top-0 ">
                 <div className="">
                   <img
@@ -182,33 +182,7 @@ const templateview = () => {
                     </p>
                   </div>
 
-                  <hr className="my-4" />
-                  <div>
-                    <div className="flex flex-wrap gap-4 mt-4">
-                      {"react nextjs".split(" ").map((tag, index) => (
-                        <button
-                          key={index}
-                          type="button"
-                          className="p-2 border-2 hover:border-gray-800 font-bold text-sm rounded-lg flex items-center justify-center shrink-0"
-                        >
-                          {tag}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                  <hr className="my-8" />
-
-                  <div className="flex flex-wrap gap-4">
-                    <button
-                      type="button"
-                      className=" px-4 py-2.5 border border-gray-200 bg-transparent text-white text-sm font-bold rounded"
-                    >
-                      Download
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div className=" max-w-4xl">
+                  <div className=" max-w-4xl mt-10">
                 <ul className="flex border-b">
                   <li
                     onClick={(e) => setSelSection("description")}
@@ -239,6 +213,8 @@ const templateview = () => {
                         {templateDetails.description}
                       </p>
                     </div>
+                    <hr className="my-4" />
+
                   </div>
                 ) : (
                   <div>
@@ -251,7 +227,40 @@ const templateview = () => {
                     </div>
                   </div>
                 )}
+
               </div>
+
+               
+
+              
+                </div>
+              </div>
+              
+             
+              <div className="  mt-40 ">
+                <div className="">
+                    <div className="flex flex-wrap gap-4 justify-center">
+                      <p>Available in:</p>
+                      {"react nextjs".split(" ").map((tag, index) => (
+                        <button
+                          key={index}
+                          type="button"
+                          className="px-3 py-1  text-white hover:border-gray-800 font-bold text-sm rounded-lg flex items-center justify-center "
+                        >
+                          {tag}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                 <div className="flex flex-wrap gap-4 justify-center mt-10">
+                    <button
+                      type="button"
+                      className=" px-4 py-3 w-72 border border-gray-200 bg-white rounded text-black text-xl  font-bold "
+                    >
+                      Download
+                    </button>
+                  </div>
+                  </div>
             </div>
           </div>
         </div>
