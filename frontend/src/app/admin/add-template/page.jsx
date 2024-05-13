@@ -9,12 +9,14 @@ const addtemplateSchema = Yup.object().shape({});
 import toast from "react-hot-toast";
 
 const TEMPLATE_CATEGORIES = [
-  "E-commerce",
-  "Portfolio",
-  "Dashboard",
-  "Blog",
-  "Form",
+  "Business & Corporate",
+  "Portfolio & Resume",
+  "E-commerce Stores",
+  "Blogging Management  ",
   "Landing Page",
+  "Dashboard & Analytics  ",
+  "Creative & Agency",
+  "Travel & Tourism  ",
   "Others",
 ];
 
@@ -35,7 +37,7 @@ const addTemplate = () => {
     initialValues: {
       template: "",
       description: "",
-      category: "E-commerce",
+      category: "E-commerce Stores",
       framework: "Next.js",
       tags: "",
       purpose: "",
@@ -92,11 +94,10 @@ const addTemplate = () => {
 
   return (
     <div>
-      <div className=" w-full px-10 bg-gray-800 " >
-     
+      <div className=" w-full px-10 bg-gray-800 ">
         <div className="p-4 text-2xl font-semibold text-white  ">
-              <h1>Template Upload!</h1>
-            </div>
+          <h1>Template Upload!</h1>
+        </div>
         <div>
           <form
             className="p-4 space-y-3  bg-gray-50 rounded-md"
@@ -115,7 +116,7 @@ const addTemplate = () => {
                     name="title"
                     onChange={addtemplateForm.handleChange}
                     value={addtemplateForm.values.title}
-                    className="text-base p-5 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 bg-white"
+                    className="text-base p-5 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 bg-white text-black"
                     type="text"
                     placeholder="Add Title that describes your template"
                   />
@@ -128,7 +129,7 @@ const addTemplate = () => {
                     Description
                   </label>
                   <textarea
-                    className="text-base p-5 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 bg-white"
+                    className="text-base p-5 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 bg-white text-black"
                     cols={4}
                     name="description"
                     onChange={addtemplateForm.handleChange}
@@ -147,7 +148,7 @@ const addTemplate = () => {
                     name="category"
                     onChange={addtemplateForm.handleChange}
                     value={addtemplateForm.values.category}
-                    className="text-base p-5 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 bg-white"
+                    className="text-base p-5 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 bg-white text-black"
                   >
                     {TEMPLATE_CATEGORIES.map((category) => (
                       <option key={category} value={category}>
@@ -167,7 +168,7 @@ const addTemplate = () => {
                     name="tags"
                     onChange={addtemplateForm.handleChange}
                     value={addtemplateForm.values.tags}
-                    className="text-base p-5 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 bg-white"
+                    className="text-base p-5 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 bg-white text-black"
                     type="text"
                     placeholder="Add related tags"
                   />
@@ -184,7 +185,7 @@ const addTemplate = () => {
                     name="framework"
                     onChange={addtemplateForm.handleChange}
                     value={addtemplateForm.values.framework}
-                    className="text-base p-5 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 bg-white"
+                    className="text-base p-5 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 bg-white text-black"
                   >
                     {TEMPLATE_FRAMEWORKS.map((framework) => (
                       <option key={framework} value={framework}>
@@ -205,7 +206,7 @@ const addTemplate = () => {
                     name="instruction"
                     onChange={addtemplateForm.handleChange}
                     value={addtemplateForm.values.instruction}
-                    className="text-base p-5 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 bg-white"
+                    className="text-base p-5 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 bg-white text-black"
                     type="textarea"
                     placeholder=""
                   />
@@ -275,7 +276,6 @@ const addTemplate = () => {
                   </p>
                   <div>
                     <div className="flex w-full  ">
-                     
                       <div
                         className="file_upload pt-3 relative border-4 border-dotted border-blue-300 rounded-lg"
                         style={{ width: 250, height: 200 }}
@@ -324,7 +324,8 @@ const addTemplate = () => {
                   <button
                     type="submit"
                     className="my-5 w-48 flex  items-center justify-center text-gray-100 p-5  rounded-lg tracking-wide
-                              font-semibold  focus:outline-none focus:shadow-outline hover:bg-blue-600 shadow-lg cursor-pointer transition ease-in duration-300"  style={{ background: "#00246B" }}
+                              font-semibold  focus:outline-none focus:shadow-outline hover:bg-blue-600 shadow-lg cursor-pointer transition ease-in duration-300"
+                    style={{ background: "#00246B" }}
                   >
                     Upload Template
                   </button>
@@ -333,8 +334,6 @@ const addTemplate = () => {
             </div>
           </form>
         </div>
-
-       
       </div>
     </div>
   );

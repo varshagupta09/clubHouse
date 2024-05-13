@@ -1,7 +1,12 @@
+'use client';
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
+
 
 const Dashboard = () => {
+
+   
+    
   return (
     <div>
 
@@ -151,13 +156,29 @@ const Dashboard = () => {
               </div>
               <hr className="h-px my-4 bg-gray-400 border-0  w-full" />
 
+
             
             </div>
+          
+
             </div>
+            <iframe
+  style={{
+    background: "#FFFFFF",
+    border: "none",
+    borderRadius: 2,
+    boxShadow: "0 2px 10px 0 rgba(70, 76, 79, .2)"
+  }}
+  width={640}
+  height={480}
+  src="https://charts.mongodb.com/charts-project-0-ggenymo/embed/charts?id=6641b037-07cf-4f3d-81ec-a463c126b630&maxDataAge=3600&theme=light&autoRefresh=true"
+/>
           </div>
         </div>
       </div>
     </div>
+
+    
   );
 };
 
