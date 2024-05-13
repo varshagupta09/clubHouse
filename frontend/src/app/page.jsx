@@ -260,11 +260,11 @@ export default function TypewriterEffectSmoothDemo() {
               How It Works
             </h2>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-              <div className=" rounded-lg shadow-md p-6 flex flex-col items-center ">
+              <div className=" rounded-lg p-6 flex flex-col items-center ">
                 <div className="bg-blue-500 text-white rounded-full w-12 h-12 flex items-center justify-center mb-4">
                   {/* Icon goes here */}1
                 </div>
-                <h3 className="text-lg text-white   font-semibold mb-2">
+                <h3 className="text-lg text-white  font-semibold mb-2">
                   Explore Templates
                 </h3>
                 <p className="text-center text-gray-300">

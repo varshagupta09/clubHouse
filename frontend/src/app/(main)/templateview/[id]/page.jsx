@@ -171,7 +171,7 @@ const templateview = () => {
                   <img
                     src={`${process.env.NEXT_PUBLIC_API_URL}/${templateDetails.image}`}
                     alt={templateDetails.title}
-                    className="w-full rounded-xl object-cover object-top "
+                    className="w-full rounded-xl object-cover object-top"
                   />
                 </div>
                 <div className="mt-8">
@@ -190,7 +190,7 @@ const templateview = () => {
                         onClick={(e) => setSelSection("description")}
                         className={`${
                           selSection === "description" &&
-                          "border-blue-700 text-gray-800 bg-gray-100 "
+                          "border-gray-800 text-gray-800 bg-gray-100 "
                         } border-b-2 font-bold text-sm  py-3 px-8 cursor-pointer transition-all`}
                       >
                         Description
@@ -236,7 +236,7 @@ const templateview = () => {
 
               <div className="  mt-40 ">
                 <div className="">
-                  <div className="flex flex-wrap gap-4 justify-center">
+                  <div className="flex flex-wrap gap-4 justify-center text-white">
                     <p>Available in:</p>
                     {"React Nextjs".split(" ").map((tag, index) => (
                       <button
