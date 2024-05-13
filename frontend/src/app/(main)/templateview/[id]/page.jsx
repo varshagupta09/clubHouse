@@ -51,6 +51,21 @@ const templateview = () => {
     fetchReviews();
   }, []);
 
+  function downloadResource(url, filename) {
+    fetch(url)
+      .then(response => response.blob())
+      .then(blob => {
+        const url = window.URL.createObjectURL(new Blob([blob]));
+        const link = document.createElement('a');
+        link.href = url;
+        link.setAttribute('download', filename);
+        document.body.appendChild(link);
+        link.click();
+        link.parentNode.removeChild(link);
+      });
+  }
+  
+
   const submitReview = () => {
     fetch(`${process.env.NEXT_PUBLIC_API_URL}/review/add`, {
       method: "POST",
@@ -251,6 +266,7 @@ const templateview = () => {
                 </div>
                 <div className="flex flex-wrap gap-4 justify-center mt-10">
                   <button
+                  onClick={e => downloadResource('http://localhost:5500/'+templateDetails.template, 'mytemplate.zip')}
                     type="button"
                     className=" px-4 py-3 w-72 border border-gray-200 bg-white rounded text-black text-xl  font-bold "
                   >

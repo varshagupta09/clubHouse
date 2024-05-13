@@ -1,11 +1,15 @@
 'use client';
 import Link from "next/link";
+import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 const templatesearch = () => {
 
   const [templateList, setTemplateList] = useState([]);
   const [masterList, setMasterList] = useState([]);
+
+  const {category} = useParams();
+  console.log(category);
 
   const fetchTemplatesData = () => {
     fetch('http://localhost:5500/template/getall')
@@ -14,8 +18,13 @@ const templatesearch = () => {
       })
       .then((data) => {
         console.log(data);
-        setTemplateList(data);
-        setMasterList(data);
+        if(category){
+          setTemplateList(data.filter(template => template.category.toLowerCase().includes(category[0]))) 
+          setMasterList(data.filter(template => template.category.toLowerCase().includes(category[0]))) 
+        }else{
+          setTemplateList(data);
+          setMasterList(data);
+        }
       })
       .catch((err) => {
         console.log(err);

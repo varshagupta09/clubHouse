@@ -1,5 +1,7 @@
 'use client';
 
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 
@@ -7,6 +9,8 @@ const BrowseCategory = () => {
 
   const [templateList, setTemplateList] = useState([]);
   const [masterList, setMasterList] = useState([]);
+
+  const router = useRouter();
 
   const fetchTemplatesData = () => {
     fetch('http://localhost:5500/template/getall')
@@ -27,7 +31,7 @@ const BrowseCategory = () => {
     fetchTemplatesData();
   }, [])
 
-  
+
 
   return (
     <div className="h-full">
@@ -53,7 +57,7 @@ const BrowseCategory = () => {
               </h3>
 
               <div className="text-center">
-                <button className="bg-blue-700 justify-center  mt-5 text-white hover:text-gray-900 hover:bg-gray-200 rounded-md w-48 py-2 ">
+                <button onClick={e => router.push('/template-search/')} className="bg-blue-700 justify-center  mt-5 text-white hover:text-gray-900 hover:bg-gray-200 rounded-md w-48 py-2 ">
                   View
                 </button>
               </div>
@@ -134,7 +138,7 @@ const BrowseCategory = () => {
               </h3>
 
               <div className="text-center">
-                <button className="bg-blue-700 justify-center  mt-5 text-white hover:text-gray-900 hover:bg-gray-200 rounded-md w-48 py-2 ">
+                <button onClick={e => router.push('/template-search/dashboard')} className="bg-blue-700 justify-center  mt-5 text-white hover:text-gray-900 hover:bg-gray-200 rounded-md w-48 py-2 ">
                   View
                 </button>
               </div>
