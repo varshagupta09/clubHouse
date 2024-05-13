@@ -109,51 +109,53 @@ const templateview = () => {
           </button>
         </div>
       );
-    } else return <h3 className="text-gray-700">Please <span className="text-gray-700 hover:text-blue-700 hover:underline">  <Link href={"/login"}>Login</Link> </span> to leave review</h3>;
+    } else
+      return (
+        <h3 className="text-gray-700">
+          Please{" "}
+          <span className="text-gray-700 hover:text-blue-700 hover:underline">
+            {" "}
+            <Link href={"/login"}>Login</Link>{" "}
+          </span>{" "}
+          to leave review
+        </h3>
+      );
   };
 
   const displayReviews = () => {
     return (
-      
-
       <>
-
-
-      <section className="text-white body-font">
-        <div className="container  py-8 mx-auto">
-          {reviewList.map((review) => (
-            <div className="py-4 px-4   ">
-              <div className=" flex items-start bg-gray-100 rounded-sm ">
-              
-                <div className="flex-grow p-5  ">
-                  <h2 className="tracking-widest text-md title-font font-medium text-gray-500 mb-1">
-                    {/* {review.user.name} */}
-                    username
-                  </h2>
-                  <div className="flex">
-                    <img src={staricon} alt="" />
-                    <img src={staricon} alt="" />
-                    <img src={staricon} alt="" />
-                    <img src={staricon} alt="" />
-                    <img src={staricon} alt="" />
+        <section className="text-white body-font">
+          <div className="container  py-8 mx-auto">
+            {reviewList.map((review) => (
+              <div className="py-4 px-4   ">
+                <div className=" flex items-start bg-gray-100 rounded-sm ">
+                  <div className="flex-grow p-5  ">
+                    <h2 className="tracking-widest text-md title-font font-medium text-gray-500 mb-1">
+                      {/* {review.user.name} */}
+                      username
+                    </h2>
+                    <div className="flex">
+                      <img src={staricon} alt="" />
+                      <img src={staricon} alt="" />
+                      <img src={staricon} alt="" />
+                      <img src={staricon} alt="" />
+                      <img src={staricon} alt="" />
+                    </div>
+                    <p className="leading-relaxed mb-5 text-gray-900">
+                      {review.review}
+                    </p>
                   </div>
-                  <p className="leading-relaxed mb-5 text-gray-900">{review.review}</p>
-                </div>
-                <div className="flex flex-col text-center text-gray-900 leading-none p-5">
-                  
-                  <span className="font-medium text-lg text-gray-900title-font leading-none w-full">
-                  {new Date(review.createdAt).toISOString().split('T')[0]}
-
-                  </span>
+                  <div className="flex flex-col text-center text-gray-900 leading-none p-5">
+                    <span className="font-medium text-lg text-gray-900title-font leading-none w-full">
+                      {new Date(review.createdAt).toISOString().split("T")[0]}
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-      </section>
-     
-    
-
+            ))}
+          </div>
+        </section>
       </>
     );
   };
@@ -183,84 +185,79 @@ const templateview = () => {
                   </div>
 
                   <div className=" max-w-4xl mt-10">
-                <ul className="flex border-b">
-                  <li
-                    onClick={(e) => setSelSection("description")}
-                    className={`${
-                      selSection === "description" &&
-                      "border-blue-700 text-gray-800 bg-gray-100 "
-                    } border-b-2 font-bold text-sm  py-3 px-8 cursor-pointer transition-all`}
-                  >
-                    Description
-                  </li>
-                  <li
-                    onClick={(e) => setSelSection("reviews")}
-                    className={`${
-                      selSection === "reviews" &&
-                      "border-gray-800 text-gray-800 bg-gray-100"
-                    } border-b-2 font-bold text-sm  py-3 px-8 cursor-pointer transition-all`}
-                  >
-                    Reviews
-                  </li>
-                </ul>
-                {selSection === "description" ? (
-                  <div>
-                    <div className="mt-8">
-                      <h3 className="text-lg font-bold text-white">
-                        Product Description
-                      </h3>
-                      <p className="text-sm text-gray-400 mt-4">
-                        {templateDetails.description}
-                      </p>
-                    </div>
-                    <hr className="my-4" />
+                    <ul className="flex border-b">
+                      <li
+                        onClick={(e) => setSelSection("description")}
+                        className={`${
+                          selSection === "description" &&
+                          "border-blue-700 text-gray-800 bg-gray-100 "
+                        } border-b-2 font-bold text-sm  py-3 px-8 cursor-pointer transition-all`}
+                      >
+                        Description
+                      </li>
+                      <li
+                        onClick={(e) => setSelSection("reviews")}
+                        className={`${
+                          selSection === "reviews" &&
+                          "border-gray-800 text-gray-800 bg-gray-100"
+                        } border-b-2 font-bold text-sm  py-3 px-8 cursor-pointer transition-all`}
+                      >
+                        Reviews
+                      </li>
+                    </ul>
+                    {selSection === "description" ? (
+                      <div>
+                        <div className="mt-8">
+                          <h3 className="text-lg font-bold text-white">
+                            Product Description
+                          </h3>
+                          <p className="text-sm text-gray-400 mt-4">
+                            {templateDetails.description}
+                          </p>
+                        </div>
+                        <hr className="my-4" />
+                      </div>
+                    ) : (
+                      <div>
+                        <div className="mt-8">
+                          <h3 className="text-lg font-bold text-white">
+                            Reviews
+                          </h3>
 
+                          {ratingForm()}
+
+                          {displayReviews()}
+                        </div>
+                      </div>
+                    )}
                   </div>
-                ) : (
-                  <div>
-                    <div className="mt-8">
-                      <h3 className="text-lg font-bold text-white">Reviews</h3>
-
-                      {ratingForm()}
-
-                      {displayReviews()}
-                    </div>
-                  </div>
-                )}
-
-              </div>
-
-               
-
-              
                 </div>
               </div>
-              
-             
+
               <div className="  mt-40 ">
                 <div className="">
-                    <div className="flex flex-wrap gap-4 justify-center">
-                      <p>Available in:</p>
-                      {"react nextjs".split(" ").map((tag, index) => (
-                        <button
-                          key={index}
-                          type="button"
-                          className="px-3 py-1  text-white hover:border-gray-800 font-bold text-sm rounded-lg flex items-center justify-center "
-                        >
-                          {tag}
-                        </button>
-                      ))}
-                    </div>
+                  <div className="flex flex-wrap gap-4 justify-center">
+                    <p>Available in:</p>
+                    {"React Nextjs".split(" ").map((tag, index) => (
+                      <button
+                        key={index}
+                        type="button"
+                        className="px-3 py-1  text-white hover:border-gray-800 font-bold text-sm rounded-lg flex items-center justify-center "
+                      >
+                        {tag}
+                      </button>
+                    ))}
                   </div>
-                 <div className="flex flex-wrap gap-4 justify-center mt-10">
-                    <button
-                      type="button"
-                      className=" px-4 py-3 w-72 border border-gray-200 bg-white rounded text-black text-xl  font-bold "
-                    >
-                      Download
-                    </button>
-                  </div>
-                  </div>
+                </div>
+                <div className="flex flex-wrap gap-4 justify-center mt-10">
+                  <button
+                    type="button"
+                    className=" px-4 py-3 w-72 border border-gray-200 bg-white rounded text-black text-xl  font-bold "
+                  >
+                    Download
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>

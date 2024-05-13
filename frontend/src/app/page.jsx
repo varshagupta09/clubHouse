@@ -267,7 +267,7 @@ export default function TypewriterEffectSmoothDemo() {
                 <h3 className="text-lg text-white   font-semibold mb-2">
                   Explore Templates
                 </h3>
-                <p className="text-center">
+                <p className="text-center text-gray-300">
                   {" "}
                   Browse our curated collection of React templates covering
                   various categories.
@@ -281,7 +281,7 @@ export default function TypewriterEffectSmoothDemo() {
                   Customize Your Design
                 </h3>
 
-                <p className="text-center">
+                <p className="text-center text-gray-300">
                   {" "}
                   Select and personalize a template to match your brand and
                   preferences.
@@ -296,7 +296,7 @@ export default function TypewriterEffectSmoothDemo() {
                   Integrate Seamlessly
                 </h3>
 
-                <p className="text-center">
+                <p className="text-center text-gray-300">
                   {" "}
                   Download and integrate the template files into your React
                   project effortlessly.
@@ -310,7 +310,7 @@ export default function TypewriterEffectSmoothDemo() {
                 <h3 className="text-lg text-white   font-semibold mb-2">
                   Collaborate and Innovate
                 </h3>
-                <p className="text-center">
+                <p className="text-center text-gray-300">
                   {" "}
                   Join our community to collaborate, learn, and access valuable
                   resources.
@@ -324,7 +324,7 @@ export default function TypewriterEffectSmoothDemo() {
                   Launch Your Project{" "}
                 </h3>
 
-                <p className="text-center">
+                <p className="text-center text-gray-300">
                   {" "}
                   Build exceptional web experiences and launch your project with
                   confidence.
